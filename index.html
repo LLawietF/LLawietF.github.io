@@ -329,37 +329,27 @@
             <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p><strong>1.安装Node.js</strong></p>
 <p><strong>2.安装Git</strong></p>
 <p><strong>3.拥有一个Github账号,没有的话注册</strong></p>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p><strong>1.新建一个repository,名字为用户名.github.io,并且勾选Initialize this repository with a README,这里由于笔者已经建了博客项目,github给出了已经存在项目的提示</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/14443526-d0624c6535e31534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>2.在电脑的任意位置创建博客文件夹,通过命令进入文件夹</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/14443526-63bce760063c39c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>3.安装hexo</strong></p>
-<p><strong>在博客文件夹中依次输入以下命令:</strong></p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="1-新建一个repository-名字为用户名-github-io-并且勾选Initialize-this-repository-with-a-README-这里由于笔者已经建了博客项目-github给出了已经存在项目的提示"><a href="#1-新建一个repository-名字为用户名-github-io-并且勾选Initialize-this-repository-with-a-README-这里由于笔者已经建了博客项目-github给出了已经存在项目的提示" class="headerlink" title="1.新建一个repository,名字为用户名.github.io,并且勾选Initialize this repository with a README,这里由于笔者已经建了博客项目,github给出了已经存在项目的提示"></a>1.新建一个repository,名字为用户名.github.io,并且勾选Initialize this repository with a README,这里由于笔者已经建了博客项目,github给出了已经存在项目的提示</h2><p><img src="https://upload-images.jianshu.io/upload_images/14443526-d0624c6535e31534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="2-在电脑的任意位置创建博客文件夹-通过命令进入文件夹"><a href="#2-在电脑的任意位置创建博客文件夹-通过命令进入文件夹" class="headerlink" title="2.在电脑的任意位置创建博客文件夹,通过命令进入文件夹"></a>2.在电脑的任意位置创建博客文件夹,通过命令进入文件夹</h2><p><img src="https://upload-images.jianshu.io/upload_images/14443526-63bce760063c39c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h2><p><strong>在博客文件夹中依次输入以下命令:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br><span class="line">hexo -v //检查hexo是否安装成功</span><br><span class="line">hexo init</span><br><span class="line">hexo install</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p><strong>依次输完命令后,在浏览器地址栏中输入<a href="http://localhost:4000,如果出现下图的情况，说明安装成功" target="_blank" rel="noopener">http://localhost:4000,如果出现下图的情况，说明安装成功</a></strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14443526-d688d049333745eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>4.连接hexo与Github Pages,设置Git的用户名和email</strong></p>
-<p><strong>打开Git Bash,依次输入以下命令</strong></p>
+<h2 id="4-连接hexo与Github-Pages-设置Git的用户名和email"><a href="#4-连接hexo与Github-Pages-设置Git的用户名和email" class="headerlink" title="4.连接hexo与Github Pages,设置Git的用户名和email"></a>4.连接hexo与Github Pages,设置Git的用户名和email</h2><p><strong>打开Git Bash,依次输入以下命令</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的github用户名&quot;</span><br><span class="line">git config --global user.email &quot;登录github的邮箱&quot;</span><br></pre></td></tr></table></figure>
-<p><strong>5.输入cd ~/.ssh，检查是否有.ssh的文件夹,如果没有在C:\Users\电脑登录的用户名下创建名为.ssh的文件夹</strong></p>
-<p><strong>6.输入ssh-keygen -t rsa -C “登录Github的邮箱”，连续三个回车</strong></p>
-<p><strong>输入eval “$(ssh-agent -s)”</strong></p>
+<h2 id="5-输入cd-ssh，检查是否有-ssh的文件夹-如果没有在C-Users-电脑登录的用户名下创建名为-ssh的文件夹"><a href="#5-输入cd-ssh，检查是否有-ssh的文件夹-如果没有在C-Users-电脑登录的用户名下创建名为-ssh的文件夹" class="headerlink" title="5.输入cd ~/.ssh，检查是否有.ssh的文件夹,如果没有在C:\Users\电脑登录的用户名下创建名为.ssh的文件夹"></a>5.输入cd ~/.ssh，检查是否有.ssh的文件夹,如果没有在C:\Users\电脑登录的用户名下创建名为.ssh的文件夹</h2><h2 id="6-输入ssh-keygen-t-rsa-C-“登录Github的邮箱”，连续三个回车"><a href="#6-输入ssh-keygen-t-rsa-C-“登录Github的邮箱”，连续三个回车" class="headerlink" title="6.输入ssh-keygen -t rsa -C “登录Github的邮箱”，连续三个回车"></a>6.输入ssh-keygen -t rsa -C “登录Github的邮箱”，连续三个回车</h2><p><strong>输入eval “$(ssh-agent -s)”</strong></p>
 <p><strong>输入ssh-add ~/.ssh/id_rsa</strong></p>
-<p><strong>7.点击Github头像下的setting,新建一个new ssh key，复制id_rsa.pub文件里的内容</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/14443526-dea5f68715bd485b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="7-点击Github头像下的setting-新建一个new-ssh-key，复制id-rsa-pub文件里的内容"><a href="#7-点击Github头像下的setting-新建一个new-ssh-key，复制id-rsa-pub文件里的内容" class="headerlink" title="7.点击Github头像下的setting,新建一个new ssh key，复制id_rsa.pub文件里的内容"></a>7.点击Github头像下的setting,新建一个new ssh key，复制id_rsa.pub文件里的内容</h2><p><img src="https://upload-images.jianshu.io/upload_images/14443526-dea5f68715bd485b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14443526-159c67ea5afdad33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14443526-4018eaa426d796d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>在Git Bash中输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了</strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14443526-2c2098f684bc61b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>8.在博客文件夹中，找到_config.yml文件,修改deploy</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/14443526-93add3b947b98a7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="8-在博客文件夹中，找到-config-yml文件-修改deploy"><a href="#8-在博客文件夹中，找到-config-yml文件-修改deploy" class="headerlink" title="8.在博客文件夹中，找到_config.yml文件,修改deploy"></a>8.在博客文件夹中，找到_config.yml文件,修改deploy</h2><p><img src="https://upload-images.jianshu.io/upload_images/14443526-93add3b947b98a7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>ps:repository的值为下图中所选区域</strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14443526-ac6626ba26a4e698.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>9.如何建立博客?</strong></p>
-<p><strong>打开cmd,切换到博客文件夹输入命令：hexo new post “博客名”后在博客文件夹/source/_posts/中可以看到新建的博客文件(扩展名为.md)</strong></p>
+<h2 id="9-如何建立博客"><a href="#9-如何建立博客" class="headerlink" title="9.如何建立博客?"></a>9.如何建立博客?</h2><p><strong>打开cmd,切换到博客文件夹输入命令：hexo new post “博客名”后在博客文件夹/source/_posts/中可以看到新建的博客文件(扩展名为.md)</strong></p>
 <p><strong>使用编辑器编辑好文章，在生成以及部署文章前，在cmd中输入：npm install hexo-deployer-git –save，然后输入hexo d -g，打开浏览器在地址栏中输入http://用户名.github.io。可以看到生成的文章</strong></p>
-<p><strong>10.如何使用其他主题?(本文以next主题为例)</strong></p>
-<p><strong>打开Git Bash,在博客文件夹中输入</strong></p>
+<h2 id="10-如何使用其他主题-本文以next主题为例"><a href="#10-如何使用其他主题-本文以next主题为例" class="headerlink" title="10.如何使用其他主题?(本文以next主题为例)"></a>10.如何使用其他主题?(本文以next主题为例)</h2><p><strong>打开Git Bash,在博客文件夹中输入</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 <p><strong>完成后,打开博客文件夹根目录下的_config.yml文件,修改theme为next</strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/14443526-b1e42c2b9c8a9295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
