@@ -344,7 +344,15 @@ type=&quot;属性值&quot;。属性值可以选： disc(实心原点，默认)�
 
 注意：项目符号可以是图片，但是通过CSS设置标记的背景图片来实现。
 当然了，列表之间是可以嵌套的。我们来举个例子：代码：
-1234567891011121314151617 &lt;ul&g
+1234567891011121314151617 &lt;ul&gt;&lt;li&gt;&lt;b&gt;北京市&lt;/b&gt;	&lt;ul&gt;		&lt;li&gt;海淀区&lt;/li&gt;		&lt;li&gt;朝阳区&lt;/li&gt;		&lt;li&gt;东城区&lt;/li&gt;	&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;广州市&lt;/b&gt;	&lt;ul&gt;		&lt;li&gt;天河区&lt;/li&gt;		&lt;li&gt;越秀区&lt;/li&gt;	&lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt;
+ul标签实际应用场景场景1 —— 导航条：
+
+场景2 —— li里面放置的内容可能很多：
+
+声明：ul的儿子，只能是li。但是li是一个容器级标签，li里面什么都能放，甚至可以再放一个ul。
+2、有序列表&lt;OL&gt;，里面的每一项是&lt;li&gt;英文单词：Ordered List。
+例如：
+12345&lt;ol &gt;	&lt;li&gt;列表1&lt;/li&gt;	&lt;li&gt;列表2&lt;/li&gt;	&lt
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -529,7 +537,18 @@ HTML颜色颜色表示：
 
 RGB色彩模式：
 
-自然界中
+自然界中所有的颜色都可以用红、绿、蓝(RGB)这三种颜色波长的不同强度组合而得，这就是人们常说的三原色原理。
+RGB三原色也叫加色模式，这是因为当我们把不同光的波长加到一起的时候，可以得到不同的混合色。例：红+绿=黄色，红+蓝＝紫色，绿+蓝=青
+在数字视频中，对RGB三基色各进行8位编码就构成了大约1678万种颜色，这就是我们常说的真彩色。所有显示设备都采用的是RGB色彩模式。
+RGB各有256级(0-255)亮度，256级的RGB色彩总共能组合出约1678万种色彩，即256×256×256=16777216。
+
+头标签头标签都放在头部分之间。包括：&lt;title&gt;、&lt;base&gt;、&lt;meta&gt;、&lt;link&gt;
+
+&lt;title&gt;：指定整个网页的标题，在浏览器最上方显示。
+&lt;base&gt;：为页面上的所有链接规标题栏显示的内容定默认地址或默认目标。
+&lt;meta&gt;：提供有关页面的基本信息
+&lt;body&gt;：用于定义HTML文档所要显示的内容，也称为主体标签。我们所写的代码必须放在此标签內。
+&lt;link&gt;：
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -687,7 +706,19 @@ RGB色彩模式：
 依次输完命令后,在浏览器地址栏中输入http://localhost:4000,如果出现下图的情况，说明安装成功
 
 4.连接hexo与Github Pages,设置Git的用户名和email打开Git Bash,依次输入以下命令
-12git config --global user.name &quot;你的github用户名&quot;git config --global user.email &quot;
+12git config --global user.name &quot;你的github用户名&quot;git config --global user.email &quot;登录github的邮箱&quot;
+5.输入cd ~/.ssh，检查是否有.ssh的文件夹,如果没有在C:\Users\电脑登录的用户名下创建名为.ssh的文件夹6.输入ssh-keygen -t rsa -C “登录Github的邮箱”，连续三个回车输入eval “$(ssh-agent -s)”
+输入ssh-add ~/.ssh/id_rsa
+7.点击Github头像下的setting,新建一个new ssh key，复制id_rsa.pub文件里的内容
+
+
+在Git Bash中输入ssh -T git@github.com，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了
+
+8.在博客文件夹中，找到_config.yml文件,修改deploy
+ps:repository的值为下图中所选区域
+
+9.如何建立博客?打开cmd,切换到博客文件夹输入命令：hexo new post “博客名”后在博客文件夹/source/_posts/中可以看到新建的博客文件(扩展名为.md)
+使用编辑器编辑好文章，在生成以及部署文章前，在cmd中输入：npm install hexo
           ...
           <!--noindex-->
           <div class="post-button text-center">
