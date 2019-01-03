@@ -233,6 +233,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/02/第6篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/02/第6篇博客/" itemprop="url">CSS选择器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T19:37:28+08:00">
+                2019-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          CSS的选择器分为两大类：基本选择器和高级选择器。
+基本选择器基本选择器包括: ID选择器，类选择器，标签选择器，通用选择器
+1、标签选择器：选择器的名字代表html页面上的标签标签选择器，选择的是页面上所有这种类型的标签，所以经常描述“共性”，无法描述某一个元素的“个性”。
+举例：
+123p&#123;	font-size:14px;&#125;
+上方选择器的意思是说：所有的&lt;p&gt;标签里的内容都将显示14号字体。
+【总结】需要注意的是：
+（1）所有的标签，都可以是选择器。比如ul、li、label、dt、dl、input。
+（2）无论这个标签藏的多深，一定能够被选择上。
+（3）选择的所有，而不是一个。
+2、ID选择器：规定用#来定义针对某一个特定的标签来使用，只能使用一次。css中的ID选择器以”#”来定义。
+举例：
+123#mytitle&#123;	border:3px dashed green;&#125;
+id选择器的选择符是“#”。
+任何的HTML标签都可以有id属性。表示这个标签的名字。这个标签的名字，可以任取，但是：
+
+（1）只能有字母、数字、下划线。
+（2）必须以字母开头。
+（3）不能和标签同名。比如id不能叫做body、img、a。
+
+另外，特别强调的是：HTML页面，不能出现相同的id，哪怕他们不是一个类型。比如页面上有一个id为pp的p，一个id为pp的div，是非法的！
+一个标签可以被多个css选择器选择：
+比如，我们可以同时让标签选择器和id选择器作用于同一个标签。如下：
+
+然后我们通过网页的审查元素看一下效果：
+
+3、类选择器：规定用圆点.来定义css中用.来表示类。举例如下：
+123.one&#123;	width:800px;&#125;
+和id非常相似，任何的标签都可以携带id属性和class属性。class属性的特点：
+
+特性1：类选择器可以被多种标签使用。
+
+特性2：同一个标签可以使用多个类选择器。用空格隔开。举例如下：
+
+
+1&lt;h3 class="teshu  zhongyao"&gt;我是一个h3啊&lt;/h3&gt;
+问题：到底用id还是用class？
+答案：尽可能的用class，除非极特殊的情况可以用id。
+原因：id是js用的。也就是说，js要通过id属性得到标签，所以css层面尽量不用id，要不
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/02/第6篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/01/第5篇博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1175,7 +1361,7 @@ ps:repository的值为下图中所选区域
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
