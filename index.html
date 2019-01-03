@@ -233,6 +233,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/03/第7篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/03/第7篇博客/" itemprop="url">第7篇博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T21:08:29+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          CSS的单位html中的单位只有一种，那就是像素px，所以单位是可以省略的，但是在CSS中不一样。CSS中的单位是必须要写的，因为它没有默认单位。
+
+绝对单位：
+1 in=2.54cm=25.4mm=72pt=6pc。
+
+
+各种单位的含义：
+
+in：英寸Inches (1 英寸 = 2.54 厘米)
+cm：厘米Centimeters
+mm：毫米Millimeters
+pt：点Points，或者叫英镑 (1点 = 1/72英寸)
+pc：皮卡Picas (1 皮卡 = 12 点)
+
+相对单位：px：像素em：印刷单位相当于12个点%：百分比，相对周围的文字的大小
+
+
+
+字体属性行高CSS中，所有的行，都有行高。盒子模型的padding，绝对不是直接作用在文字上的，而是作用在“行”上的。
+垂直方向来看，文字在自己的行里是居中的。比如，文字是14px，行高是24px，那么padding就是5px：
+
+为了严格保证字在行里面居中，我们的工程师有一个约定： 行高、字号，一般都是偶数。这样可以保证，它们的差一定偶数，就能够被2整除。
+如何让单行文本垂直居中小技巧：如果一段文本只有一行，如果此时设置行高 = 盒子高，就可以保证单行文本垂直居中。这个很好理解。
+上面这个小技巧，只适用于单行文本垂直居中，不适用于多行。如果想让多行文本垂直居中，还需要计算盒子的padding。计算方式如下：
+
+font字体属性css样式中，字体属性有以下几种：
+12345678p&#123;	font-size:50px; 		/*字体大小*/	line-height: 30px;      /*行高*/	font-family:幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/	font-style:italic ;		/*italic表示斜体，normal表示不倾斜*/	font-weight:bold;	/*粗体：属性值写成bolder也可以*/	font-variant:small-caps;  /*小写变大写*/&#125;
+1、字号、行高、字体三大属性：
+（1）字号：
+1font-size:14px;
+（2）行高：
+1line-height:24px;
+（3）字体：（font-family就是“字体”，family是“家庭”的意思）
+1font-family:&qu
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/03/第7篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/02/第6篇博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1361,7 +1542,7 @@ ps:repository的值为下图中所选区域
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

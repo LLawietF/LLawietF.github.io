@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS的单位html中的单位只有一种，那就是像素px，所以单位是可以省略的，但是在CSS中不一样。CSS中的单位是必须要写的，因为它没有默认单位。  绝对单位： 1 in=2.54cm=25.4mm=72pt=6pc。   各种单位的含义：  in：英寸Inches (1 英寸 = 2.54 厘米) cm：厘米Centimeters mm：毫米Millimeters pt：点Points，或者叫英">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第7篇博客">
+<meta property="og:url" content="https://llawietf.github.io/2019/01/03/第7篇博客/index.html">
+<meta property="og:site_name" content="LLawietF&#39;s Blog">
+<meta property="og:description" content="CSS的单位html中的单位只有一种，那就是像素px，所以单位是可以省略的，但是在CSS中不一样。CSS中的单位是必须要写的，因为它没有默认单位。  绝对单位： 1 in=2.54cm=25.4mm=72pt=6pc。   各种单位的含义：  in：英寸Inches (1 英寸 = 2.54 厘米) cm：厘米Centimeters mm：毫米Millimeters pt：点Points，或者叫英">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.smyhvae.com/20170808_2220.png">
+<meta property="og:image" content="http://img.smyhvae.com/20170808_2240.png">
+<meta property="og:image" content="http://img.smyhvae.com/2015-10-03-css-18.png">
+<meta property="og:image" content="http://img.smyhvae.com/2015-10-03-css-26.png">
+<meta property="og:updated_time" content="2019-01-03T13:27:25.048Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第7篇博客">
+<meta name="twitter:description" content="CSS的单位html中的单位只有一种，那就是像素px，所以单位是可以省略的，但是在CSS中不一样。CSS中的单位是必须要写的，因为它没有默认单位。  绝对单位： 1 in=2.54cm=25.4mm=72pt=6pc。   各种单位的含义：  in：英寸Inches (1 英寸 = 2.54 厘米) cm：厘米Centimeters mm：毫米Millimeters pt：点Points，或者叫英">
+<meta name="twitter:image" content="http://img.smyhvae.com/20170808_2220.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://llawietf.github.io/2019/01/03/第7篇博客/">
+
+
+
+
+
+  <title>第7篇博客 | LLawietF's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LLawietF's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/03/第7篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第7篇博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T21:08:29+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="CSS的单位"><a href="#CSS的单位" class="headerlink" title="CSS的单位"></a>CSS的单位</h2><p>html中的单位只有一种，那就是像素px，所以单位是可以省略的，但是在CSS中不一样。<strong>CSS中的单位是必须要写的</strong>，因为它没有默认单位。</p>
+<ul>
+<li><p><strong>绝对单位：</strong></p>
+<p>1 <code>in</code>=2.54<code>cm</code>=25.4<code>mm</code>=72<code>pt</code>=6<code>pc</code>。</p>
+</li>
+</ul>
+<p>各种单位的含义：</p>
+<ul>
+<li><code>in</code>：英寸Inches (1 英寸 = 2.54 厘米)</li>
+<li><code>cm</code>：厘米Centimeters</li>
+<li><code>mm</code>：毫米Millimeters</li>
+<li><code>pt</code>：点Points，或者叫英镑 (1点 = 1/72英寸)</li>
+<li><p><code>pc</code>：皮卡Picas (1 皮卡 = 12 点)</p>
+<ul>
+<li><strong>相对单位：</strong><br><code>px</code>：像素<br><code>em</code>：印刷单位相当于12个点<br><code>%</code>：百分比，相对周围的文字的大小</li>
+</ul>
+</li>
+</ul>
+<h2 id="字体属性"><a href="#字体属性" class="headerlink" title="字体属性"></a>字体属性</h2><h3 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h3><p>CSS中，所有的行，都有行高。盒子模型的padding，绝对不是直接作用在文字上的，而是作用在“行”上的。</p>
+<p>垂直方向来看，文字在自己的行里是居中的。比如，文字是14px，行高是24px，那么padding就是5px：</p>
+<p><img src="http://img.smyhvae.com/20170808_2220.png" alt=""></p>
+<p>为了严格保证字在行里面居中，我们的工程师有一个约定： <strong>行高、字号，一般都是偶数</strong>。这样可以保证，它们的差一定偶数，就能够被2整除。</p>
+<h3 id="如何让单行文本垂直居中"><a href="#如何让单行文本垂直居中" class="headerlink" title="如何让单行文本垂直居中"></a>如何让单行文本垂直居中</h3><p>小技巧：如果一段文本只有一行，如果此时设置<strong>行高 = 盒子高</strong>，就可以保证单行文本垂直居中。这个很好理解。</p>
+<p>上面这个小技巧，只适用于单行文本垂直居中，不适用于多行。如果想让多行文本垂直居中，还需要计算盒子的padding。计算方式如下：</p>
+<p><img src="http://img.smyhvae.com/20170808_2240.png" alt=""></p>
+<h3 id="font字体属性"><a href="#font字体属性" class="headerlink" title="font字体属性"></a>font字体属性</h3><p>css样式中，字体属性有以下几种：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	font-size:50px; 		/*字体大小*/</span><br><span class="line">	line-height: 30px;      /*行高*/</span><br><span class="line">	font-family:幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/</span><br><span class="line">	font-style:italic ;		/*italic表示斜体，normal表示不倾斜*/</span><br><span class="line">	font-weight:bold;	/*粗体：属性值写成bolder也可以*/</span><br><span class="line">	font-variant:small-caps;  /*小写变大写*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1、字号、行高、字体三大属性：</strong></p>
+<p>（1）字号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-size:14px;</span><br></pre></td></tr></table></figure>
+<p>（2）行高：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height:24px;</span><br></pre></td></tr></table></figure>
+<p>（3）字体：（font-family就是“字体”，family是“家庭”的意思）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family:&quot;宋体&quot;;</span><br></pre></td></tr></table></figure>
+<p>是否加粗属性以及上面这三个属性，我们可以连写：（是否加粗、字号 font-size、行高 line-height、字体 font-family）</p>
+<p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font: 加粗 字号/行高/ 字体</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font: 400 14px/24px “宋体”;</span><br></pre></td></tr></table></figure>
+<p>PS：400是nomal，700是bold。</p>
+<p>上面这几个属性可以连写，但是有一个要求，font属性连写至少要有<strong>字号和字体</strong>，否则连写是不生效的（相当于没有这一行代码）。</p>
+<p><strong>2、字体属性的说明：</strong></p>
+<p>（1）网页中不是所有字体都能用，因为这个字体要看用户的电脑里面装没装，比如设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;华文彩云&quot;;</span><br></pre></td></tr></table></figure>
+<p>上方代码中，如果用户电脑里面没有这个字体，那么就会变成宋体。</p>
+<p>页面中，中文我们只使用：微软雅黑、宋体、黑体。英文使用：Arial、Times New Roman。页面中如果需要其他的字体，就需要切图。</p>
+<p>（2）为了防止用户电脑里，没有微软雅黑这个字体。就要用英语的逗号，隔开备选字体。如下：（可以备选多个）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;微软雅黑&quot;,&quot;宋体&quot;;</span><br></pre></td></tr></table></figure>
+<p>上方代码表示：如果用户电脑里没有安装微软雅黑字体，那么就是宋体。</p>
+<p>（3）我们须将英语字体放在最前面，这样所有的中文，就不能匹配英语字体，就自动的变为后面的中文字体：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;Times New Roman&quot;,&quot;微软雅黑&quot;,&quot;宋体&quot;;</span><br></pre></td></tr></table></figure>
+<p>上方代码的意思是，英文会采用Times New Roman字体，而中文会采用微软雅黑字体（因为美国人设计的Times New Roman字体并不针对中文，所以中文会采用后面的微软雅黑）。<br>可是，如果我们把中文字体写在前面：(错误写法)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;微软雅黑&quot;,&quot;Times New Roman&quot;,&quot;宋体&quot;;</span><br></pre></td></tr></table></figure>
+<p>上方代码会导致，中文和英文都会采用微软雅黑字体。</p>
+<p>（4）所有的中文字体，都有英语别名。</p>
+<p>微软雅黑的英语别名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;Microsoft YaHei&quot;;</span><br></pre></td></tr></table></figure>
+<p>宋体的英语别名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-family: &quot;SimSun&quot;;</span><br></pre></td></tr></table></figure>
+<p>于是，当我们把字号、行高、字体这三个属性合二为一时，也可以写成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font:12px/30px  &quot;Times New Roman&quot;,&quot;Microsoft YaHei&quot;,&quot;SimSun&quot;;</span><br></pre></td></tr></table></figure>
+<p>（5）行高可以用百分比，表示字号的百分之多少。</p>
+<p>一般来说，百分比都是大于100%的，因为行高一定要大于字号。</p>
+<p>比如说， <code>font:12px/200% “宋体”</code>等价于<code>font:12px/24px “宋体”</code>。<code>200%</code>可以理解成word里面的2倍行高。</p>
+<p>反过来， <code>font:16px/48px “宋体”;</code>等价于<code>font:16px/300% “宋体”</code>。</p>
+<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><p>CSS样式中，常见的文本属性有以下几种：</p>
+<ul>
+<li><code>letter-spacing: 0.5cm ;</code>  单个字母之间的间距</li>
+<li><code>word-spacing: 1cm;</code>   单词之间的间距</li>
+<li><code>text-decoration: none;</code> 字体修饰：none去掉下划线、<strong>underline下划线</strong>、line-through中划线、overline上划线、</li>
+<li><code>text-transform: lowercase;</code>  单词字体大小写。uppercase大写、lowercase小写</li>
+<li><code>color:red;</code> 字体颜色</li>
+<li><code>text-align: center;</code> 在当前容器中的对齐方式。属性值可以是：left、right、center、justify</li>
+<li><code>text-transform: lowercase;</code> 单词的字体大小写。属性值可以是：<code>uppercase</code>（单词大写）、<code>lowercase</code>（单词小写）、<code>capitalize</code>（每个单词的首字母大写）</li>
+</ul>
+<p>这里来一张表格的图片吧，一览无遗：</p>
+<p><img src="http://img.smyhvae.com/2015-10-03-css-18.png" alt=""></p>
+<h2 id="列表属性"><a href="#列表属性" class="headerlink" title="列表属性"></a>列表属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ul li&#123;</span><br><span class="line">	list-style-image:url(images/2.gif) ;  /*列表项前设置为图片*/</span><br><span class="line">	margin-left:80px;  /*公有属性*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外还有一个简写属性叫做<code>list-style</code>，它的作用是：将上面的多个属性写在一个声明中。</p>
+<p>这里来一张表格的图片吧，一览无遗：</p>
+<p><img src="http://img.smyhvae.com/2015-10-03-css-26.png" alt=""></p>
+<h2 id="overflow属性：超出范围的内容要怎么处理"><a href="#overflow属性：超出范围的内容要怎么处理" class="headerlink" title="overflow属性：超出范围的内容要怎么处理"></a>overflow属性：超出范围的内容要怎么处理</h2><p><code>overflow</code>属性的属性值可以是：</p>
+<ul>
+<li><code>auto</code>： 内容小于盒子高度不显示滚动条，超出盒子高度显示滚动条。</li>
+<li><code>visible</code>：默认值。多余的内容不剪切也不添加滚动条，会全部显示出来。</li>
+<li><code>hidden</code>：不显示超过对象尺寸的内容。<br>对象将以包含对象的 window 或 frame 的尺寸进行裁切，并且 clip 属性设置将失效。</li>
+<li><code>scroll</code>：总是显示滚动条。</li>
+</ul>
+<h2 id="鼠标的属性cursor"><a href="#鼠标的属性cursor" class="headerlink" title="鼠标的属性cursor"></a>鼠标的属性cursor</h2><p>鼠标的属性<code>cursor</code>有以下几个属性值：</p>
+<ul>
+<li><code>auto</code>：默认值。浏览器根据当前情况自动确定鼠标光标类型。</li>
+<li><code>pointer</code>：竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样。</li>
+<li><code>hand</code>：和<code>pointer</code>的作用一样：竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样(IE6.0-)。</li>
+</ul>
+<p>另外还有以下的属性：（不用记，需要的时候查一下就行了）</p>
+<ul>
+<li>all-scroll      :　 IE6.0  有上下左右四个箭头，中间有一个圆点的光标。用于标示页面可以向上下左右任何方向滚动。</li>
+<li>col-resize      :　 IE6.0  有左右两个箭头，中间由竖线分隔开的光标。用于标示项目或标题栏可以被水平改变尺寸。</li>
+<li>crosshair       :　  简单的十字线光标。</li>
+<li>default         :　  客户端平台的默认光标。通常是一个箭头。</li>
+<li>hand            :　  竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样。</li>
+<li>move            :　  十字箭头光标。用于标示对象可被移动。</li>
+<li>help            :　  带有问号标记的箭头。用于标示有帮助信息存在。</li>
+<li>no-drop         :　 IE6.0  带有一个被斜线贯穿的圆圈的手形光标。用于标示被拖起的对象不允许在光标的当前位置被放下。</li>
+<li>not-allowed     :　 IE6.0  禁止标记(一个被斜线贯穿的圆圈)光标。用于标示请求的操作不允许被执行。</li>
+<li>progress        :　 IE6.0  带有沙漏标记的箭头光标。用于标示一个进程正在后台运行。</li>
+<li>row-resize      :　 IE6.0  有上下两个箭头，中间由横线分隔开的光标。用于标示项目或标题栏可以被垂直改变尺寸。</li>
+<li>text            :　  用于标示可编辑的水平文本的光标。通常是大写字母 I 的形状。</li>
+<li>vertical-text   :　 IE6.0  用于标示可编辑的垂直文本的光标。通常是大写字母 I 旋转90度的形状。</li>
+<li>wait            :　  用于标示程序忙用户需要等待的光标。通常是沙漏或手表的形状。</li>
+<li>*-resize        :　  用于标示对象可被改变尺寸方向的箭头光标。</li>
+<li>w-resize | s-resize | n-resize | e-resize | ne-resize | sw-resize | se-resize | nw-resize</li>
+<li>url ( url )     :　 IE6.0  用户自定义光标。使用绝对或相对 url 地址指定光标文件(后缀为 .cur 或者 .ani )。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/第6篇博客/" rel="next" title="CSS选择器">
+                <i class="fa fa-chevron-left"></i> CSS选择器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LLawietF</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS的单位"><span class="nav-number">1.</span> <span class="nav-text">CSS的单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体属性"><span class="nav-number">2.</span> <span class="nav-text">字体属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行高"><span class="nav-number">2.1.</span> <span class="nav-text">行高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何让单行文本垂直居中"><span class="nav-number">2.2.</span> <span class="nav-text">如何让单行文本垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#font字体属性"><span class="nav-number">2.3.</span> <span class="nav-text">font字体属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本属性"><span class="nav-number">3.</span> <span class="nav-text">文本属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表属性"><span class="nav-number">4.</span> <span class="nav-text">列表属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow属性：超出范围的内容要怎么处理"><span class="nav-number">5.</span> <span class="nav-text">overflow属性：超出范围的内容要怎么处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标的属性cursor"><span class="nav-number">6.</span> <span class="nav-text">鼠标的属性cursor</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LLawietF</span>
+
+  
+</div>
+
+<!--
+   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+   <span class="post-meta-divider">|</span>
+
+
+
+   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
