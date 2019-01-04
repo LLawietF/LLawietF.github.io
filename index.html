@@ -233,6 +233,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/04/第8篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/04/第8篇博客/" itemprop="url">CSS浮动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T19:31:57+08:00">
+                2019-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          标准文档流标准文档流的特性（1）空白折叠现象：
+无论多少个空格、换行、tab，都会折叠为一个空格。
+比如，如果我们想让img标签之间没有空隙，必须紧密连接：
+1&lt;img src=&quot;images/0.jpg&quot; /&gt;&lt;img src=&quot;images/1.jpg&quot; /&gt;&lt;img src=&quot;images/2.jpg&quot; /&gt;
+（2）高矮不齐，底边对齐：
+（3）自动换行，一行写不满，换行写。
+行内元素和块级元素学习的初期，我们就要知道，标准文档流等级森严。标签分为两种等级：
+
+行内元素
+块级元素
+
+举一个例子，看看块级元素和行内元素的区别：
+
+上图中可以看到，p标签是块级元素，占据了整行，span标签是行内元素，只占据内容这一部分。
+现在我们尝试给两个标签设置宽高。效果如下：
+
+上图中，尝试给两个标签设置宽高，发现，宽高属性只对块级元素p生效。
+行内元素和块级元素的区别：（非常重要）
+行内元素：
+
+与其他行内元素并排；
+不能设置宽、高。默认的宽度，就是文字的宽度。
+
+块级元素：
+
+占一行，不能与其他任何元素并列；
+能接受宽、高。如果不设置宽度，那么宽度将默认变为父亲的100%。
+
+行内元素和块级元素的分类：
+从HTML的角度来讲，标签分为：
+
+文本级标签：p、span、a、b、i、u、em。
+容器级标签：div、h系列、li、dt、dd。
+
+
+PS：为甚么说p是文本级标签呢？因为p里面只能放文字&amp;图片&amp;表单元素，p里面不能放h和ul，p里面也不能放p。
+
+现在，从CSS的角度讲，CSS的分类和上面的很像，就p不一样：
+
+行内元素：除了p之外，所有的文本级标签，都是行内元素。p是个文本级，但是是个块级元素。
+
+块级元素：所有的容器级标签都是块级元素，还有p标签。
+
+
+
+行内元素和块级元素的相互转换块级元素可以转换为行内元素：1display: inline;
+行内元素转换为块级元素：1display: block;
+标准流里面的限制非常多，导致很多页面效果无法实现。如果我们现在就要并排、并且就要设置宽高，那该怎么办呢？办法是：脱离标准流！
+css中一共有三种手段，使一个元素脱离标准文档流：
+
+（1）浮动
+（2）绝对定位
+（3）固定定位
+
+浮动的性质性质1：浮动的元素脱标
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/04/第8篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/03/第7篇博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1542,7 +1744,7 @@ ps:repository的值为下图中所选区域
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
