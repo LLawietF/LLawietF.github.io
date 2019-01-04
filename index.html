@@ -252,7 +252,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/04/第9篇博客/" itemprop="url">第9篇博客</a></h1>
+                <a class="post-title-link" href="/2019/01/04/第9篇博客/" itemprop="url">CSS定位</a></h1>
         
 
         <div class="post-meta">
@@ -274,6 +274,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -304,8 +326,43 @@
       
         
           
-          
-          
+          CSS的定位属性有三种，分别是绝对定位、相对定位、固定定位。
+12345position: absolute;  &lt;!-- 绝对定位 --&gt;position: relative;  &lt;!-- 相对定位 --&gt;position: fixed;     &lt;!-- 固定定位 --&gt;
+相对定位相对定位：让元素相对于自己原来的位置，进行位置调整（可用于盒子的位置微调）。
+相对定位不脱标相对定位：不脱标，别人不会把它的位置挤走。
+相对定位的用途如果想做“压盖”效果（把一个div放到另一个div之上），我们一般不用相对定位来做。相对定位，就两个作用：
+
+（1）微调元素
+（2）做绝对定位的参考，子绝父相
+
+相对定位的定位值
+left：盒子右移
+
+right：盒子左移
+
+top：盒子下移
+
+bottom：盒子上移
+
+
+PS：负数表示相反的方向。
+绝对定位绝对定位：定义横纵坐标。原点在父容器的左上角或左下角。横坐标用left表示，纵坐标用top或者bottom表示。
+格式举例如下：
+123position: absolute;  /*绝对定位*/left: 10px;  /*横坐标*/top/bottom: 20px;  /*纵坐标*/
+绝对定位脱标绝对定位的盒子脱离了标准文档流。
+所以，所有的标准文档流的性质，绝对定位之后都不遵守了。
+绝对定位之后，标签就不区分所谓的行内元素、块级元素了，不需要display:block就可以设置宽、高了。
+绝对定位的参考点（重要）（1）如果用top描述，那么参考点就是页面的左上角，而不是浏览器的左上角：
+
+（2）如果用bottom描述，那么参考点就是浏览器首屏窗口尺寸（好好理解“首屏”二字），对应的页面的左下角：
+
+以盒子为参考点一个绝对定位的元素，如果父辈元素中也出现了已定位（无论是绝对定位、相对定位，还是固定定位）的元素，那么将以父辈这个元素，为参考点。
+如下：（子绝父相）
+
+以下几点需要注意。
+（1） 要听最近的已经定位的祖先元素的，不一定是父亲，可能是爷爷：
+12345&lt;div class=&quot;box1&quot;&gt;        相对定位	&lt;div class=&quot;box2&quot;&gt;    没有定位		&lt;p&gt;&lt;/p&gt;          
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/01/04/第9篇博客/#more" rel="contents">
