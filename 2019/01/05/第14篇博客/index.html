@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="颜色CSS3中，有一种新的表示颜色的方式：RGBA或者HSLA。 RGBA、HSLA可应用于所有使用颜色的地方。 RGBA 举例： 123background-color: rgba(0, 0, 255, 0.3);border: 30px solid rgba(0, 255, 0, 0.3); 解释：  RGBA 即：Red、Green、Blue、Alpha  R、G、B 的取值范围是：0~25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS复习(二)">
+<meta property="og:url" content="https://llawietf.github.io/2019/01/05/第14篇博客/index.html">
+<meta property="og:site_name" content="LLawietF&#39;s Blog">
+<meta property="og:description" content="颜色CSS3中，有一种新的表示颜色的方式：RGBA或者HSLA。 RGBA、HSLA可应用于所有使用颜色的地方。 RGBA 举例： 123background-color: rgba(0, 0, 255, 0.3);border: 30px solid rgba(0, 255, 0, 0.3); 解释：  RGBA 即：Red、Green、Blue、Alpha  R、G、B 的取值范围是：0~25">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_1545.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-fa2507a808f16b56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_1700.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_1710.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_1750.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2027.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180206_2150.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2045.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2046.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2050.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2051.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2115.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2140.gif">
+<meta property="og:image" content="http://img.smyhvae.com/20180208_1140.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2222.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2301.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180207_2256.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180208_1133.png">
+<meta property="og:updated_time" content="2019-01-05T12:23:41.916Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS复习(二)">
+<meta name="twitter:description" content="颜色CSS3中，有一种新的表示颜色的方式：RGBA或者HSLA。 RGBA、HSLA可应用于所有使用颜色的地方。 RGBA 举例： 123background-color: rgba(0, 0, 255, 0.3);border: 30px solid rgba(0, 255, 0, 0.3); 解释：  RGBA 即：Red、Green、Blue、Alpha  R、G、B 的取值范围是：0~25">
+<meta name="twitter:image" content="http://img.smyhvae.com/20180207_1545.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://llawietf.github.io/2019/01/05/第14篇博客/">
+
+
+
+
+
+  <title>CSS复习(二) | LLawietF's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LLawietF's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/05/第14篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS复习(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-05T17:15:53+08:00">
+                2019-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><p>CSS3中，有一种新的表示颜色的方式：RGBA或者HSLA。</p>
+<p>RGBA、HSLA可应用于<strong>所有</strong>使用颜色的地方。</p>
+<p><strong>RGBA 举例</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background-color: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>, <span class="number">0.3</span>);</span><br><span class="line"></span><br><span class="line">border: <span class="number">30</span>px solid rgba(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">0.3</span>);</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li><p>RGBA 即：Red、Green、Blue、Alpha</p>
+</li>
+<li><p>R、G、B 的取值范围是：0~255</p>
+</li>
+</ul>
+<p><strong>HSLA 举例</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: hsla(<span class="number">240</span>,<span class="number">50</span>%,<span class="number">50</span>%,<span class="number">0.4</span>);</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li><p><code>H</code> 色调，取值范围 0~360。0或360表示红色、120表示绿色、240表示蓝色。</p>
+</li>
+<li><p><code>S</code> 饱和度，取值范围 0%~100%。值越大，越鲜艳。</p>
+</li>
+<li><p><code>L</code> 亮度，取值范围 0%~100%。亮度最大时为白色，最小时为黑色。</p>
+</li>
+<li><p><code>A</code> 透明度，取值范围 0~1。</p>
+</li>
+</ul>
+<p>如果不知道 H 的值该设置多少，我们不妨来看一下<strong>色盘</strong>：</p>
+<p><img src="http://img.smyhvae.com/20180207_1545.png" alt=""></p>
+<p>推荐链接：<a href="http://www.uisdc.com/how-to-create-color-palettes" target="_blank" rel="noopener">配色宝典</a></p>
+<p><strong>关于设置透明度的其他方式：</strong></p>
+<p>（1）<code>opacity: 0.3;</code> 会将整个盒子及子盒子设置透明度。也就是说，当盒子设置半透明的时候，会影响里面的子盒子。</p>
+<p>（2）<code>background: transparent;</code> 可以单独设置透明度，但设置的是完全透明（不可调节透明度）。</p>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><h3 id="text-shadow：设置文本的阴影"><a href="#text-shadow：设置文本的阴影" class="headerlink" title="text-shadow：设置文本的阴影"></a>text-shadow：设置文本的阴影</h3><p>格式举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: <span class="number">20</span>px <span class="number">27</span>px <span class="number">22</span>px pink;</span><br></pre></td></tr></table></figure>
+<p>参数解释：水平位移 垂直位移 模糊程度 阴影颜色。</p>
+<p>效果举例：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14443526-fa2507a808f16b56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="盒模型中的-box-sizing-属性"><a href="#盒模型中的-box-sizing-属性" class="headerlink" title="盒模型中的 box-sizing 属性"></a>盒模型中的 box-sizing 属性</h2><p>CSS3 对盒模型做出了新的定义，即允许开发人员<strong>指定盒子宽度和高度的计算方式</strong>。</p>
+<p>这就需要用到 <code>box-sizing</code>属性。它的属性值可以是：<code>content-box</code>、<code>border-box</code>。解释如下。</p>
+<p><strong>外加模式：</strong>（css的默认方式）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: content-box;</span><br></pre></td></tr></table></figure>
+<p>解释：此时设置的 width 和 height 是<strong>内容区域</strong>的宽高。<code>盒子的实际宽度 = 设置的 width + padding + border</code>。此时改变 padding 和 border 的大小，也不会改变内容的宽高，而是盒子的总宽高发生变化。</p>
+<p><strong>内减模式：</strong>【需要注意】</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: border-box;</span><br></pre></td></tr></table></figure>
+<p>解释：此时设置的 width 和 height 是<strong>盒子</strong>的总宽高。<code>盒子的实际宽度 = 设置的 width</code>。此时改变 padding 和 border 的大小，会改变内容的宽高，盒子的总宽高不变。</p>
+<h2 id="处理兼容性问题：私有前缀"><a href="#处理兼容性问题：私有前缀" class="headerlink" title="处理兼容性问题：私有前缀"></a>处理兼容性问题：私有前缀</h2><p>处理兼容性问题的常见方法：为属性添加<strong>私有前缀</strong>。</p>
+<p>如此方法不能解决，应尽量避免使用，无需刻意去处理CSS3的兼容性问题。</p>
+<p><strong>私有前缀的举例</strong>：</p>
+<p>比如说，我想给指定的div设置下面这样一个属性：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">green</span>, <span class="selector-tag">yellow</span>);</span><br></pre></td></tr></table></figure>
+<p>上面这个属性的作用是：添加从左到右的线性渐变，颜色从绿色变为黄色。</p>
+<p>如果直接这样写属性，是看不到效果的：</p>
+<p><img src="http://img.smyhvae.com/20180207_1700.png" alt=""></p>
+<p>此时，我们可以<strong>为浏览器添加不同的私有前缀</strong>，属性就可以生效了。</p>
+<p>格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-webkit-: 谷歌 苹果</span><br><span class="line">-moz-:火狐</span><br><span class="line">-ms-：IE</span><br><span class="line">-o-：opera</span><br></pre></td></tr></table></figure>
+<p>格式举例如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-webkit-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">green</span>, <span class="selector-tag">yellow</span>);</span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-moz-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">green</span>, <span class="selector-tag">yellow</span>);</span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-ms-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">green</span>, <span class="selector-tag">yellow</span>);</span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-o-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">green</span>, <span class="selector-tag">yellow</span>);</span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">green</span>, <span class="selector-tag">yellow</span>);</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180207_1710.png" alt=""></p>
+<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p>边框的属性很多，其中<strong>边框圆角</strong>和<strong>边框阴影</strong>这两个属性，应用十分广泛，兼容性也相对较好，且符合<strong>渐进增强</strong>的原则，需要重点熟悉。</p>
+<h3 id="边框圆角：border-radius-属性"><a href="#边框圆角：border-radius-属性" class="headerlink" title="边框圆角：border-radius 属性"></a>边框圆角：<code>border-radius</code> 属性</h3><p>边框的每个圆角，本质上是一个圆，圆有<strong>水平半径</strong>和<strong>垂直半径</strong>：如果二者相等，就是圆；如果二者不等， 就是椭圆。</p>
+<p>单个属性的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">border-top-left-radius: 60px 120px;        //参数解释：水平半径   垂直半径</span><br><span class="line"></span><br><span class="line">border-top-right-radius: 60px 120px;</span><br><span class="line"></span><br><span class="line">border-bottom-left-radius: 60px 120px;</span><br><span class="line"></span><br><span class="line">border-bottom-right-radius: 60px 120px;</span><br></pre></td></tr></table></figure>
+<p>复合写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 60px/120px;             //参数：水平半径/垂直半径</span><br><span class="line"></span><br><span class="line">border-radius: 20px 60px 100px 140px;  //从左上开始，顺时针赋值。如果当前角没有值，取对角的值</span><br><span class="line"></span><br><span class="line">border-radius: 20px 60px;</span><br></pre></td></tr></table></figure>
+<p>最简洁的写法：（四个角的半径都相同时）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 60px;</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.parent</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 400px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 100px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">            border: 1px solid rgb(144, 12, 63);</span></span><br><span class="line"><span class="undefined">            margin: 20px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 100px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">            font-size: 50px;</span></span><br><span class="line"><span class="undefined">            background-color: rgb(255, 141, 26);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*画圆形的方式一*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-radius: 100px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*画圆形的方式二*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-radius: 50%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(3)</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-radius: 200px 0 0 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(4)</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-radius: 100px/50px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(5)</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-radius: 10%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(6)</span> &#123;</span></span><br><span class="line"><span class="undefined">            border-radius: 0 100px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180207_1750.png" alt=""></p>
+<h3 id="边框阴影：box-shadow-属性"><a href="#边框阴影：box-shadow-属性" class="headerlink" title="边框阴影：box-shadow 属性"></a>边框阴影：<code>box-shadow</code> 属性</h3><p>格式举例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: 水平偏移 垂直偏移 模糊程度 阴影大小 阴影颜色</span><br><span class="line"></span><br><span class="line">box-shadow: 15px 21px 48px -2px #666;</span><br></pre></td></tr></table></figure>
+<p>参数解释：</p>
+<ul>
+<li><p>水平偏移：正值向右 负值向左。</p>
+</li>
+<li><p>垂直偏移：正值向下 负值向上。</p>
+</li>
+<li><p>模糊程度：不能为负值。</p>
+</li>
+</ul>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180207_2027.png" alt=""></p>
+<p>另外，后面还可以再加一个inset属性，表示内阴影。如果不写，则默认表示外阴影。例如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow:3px 3px 3px 3px #666 inset;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p>20180207_2028.png<br><img src="http://img.smyhvae.com/20180206_2150.png" alt=""></p>
+<p><strong>注意</strong>：设置边框阴影不会改变盒子的大小，即不会影响其兄弟元素的布局。</p>
+<p>我们还可以设置多重边框阴影，实现更好的效果，增强立体感。</p>
+<h3 id="边框图片"><a href="#边框图片" class="headerlink" title="边框图片"></a>边框图片</h3><p>边框图片有以下属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 边框图片的路径*/</span></span><br><span class="line">border-image-source: url(<span class="string">"images/border.png"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 图片边框的裁剪*/</span></span><br><span class="line">border-image-slice: <span class="number">27</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*图片边框的宽度*/</span></span><br><span class="line">border-image-width: <span class="number">27</span>px;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*边框图片的平铺*/</span></span><br><span class="line"><span class="comment">/* repeat :正常平铺 但是可能会显示不完整*/</span></span><br><span class="line"><span class="comment">/*round: 平铺 但是保证 图片完整*/</span></span><br><span class="line"><span class="comment">/*stretch: 拉伸显示*/</span></span><br><span class="line">border-image-repeat: stretch;</span><br></pre></td></tr></table></figure>
+<p>我们也可以写成一个综合属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-image: url(<span class="string">"images/border.png"</span>) <span class="number">27</span>/<span class="number">20</span>px round;</span><br></pre></td></tr></table></figure>
+<p>这个属性要好好理解，我们假设拿下面这张图来作为边框图片：</p>
+<p><img src="http://img.smyhvae.com/20180207_2045.png" alt=""></p>
+<p><img src="http://img.smyhvae.com/20180207_2046.png" alt=""></p>
+<p>这张图片将会被“切割”成<strong>九宫格</strong>形式，然后进行平铺。四个角位置、形状保持不变，中心位置和水平垂直向两个方向平铺：</p>
+<p><img src="http://img.smyhvae.com/20180207_2050.png" alt=""></p>
+<p>再具体一点：</p>
+<p><img src="http://img.smyhvae.com/20180207_2051.png" alt=""></p>
+<h2 id="背景属性"><a href="#背景属性" class="headerlink" title="背景属性"></a>背景属性</h2><p>背景属性在 CSS3 中也得到很大程度的增强，比如背景图片尺寸、背景裁切区域、背景定位参照点、多重背景等。</p>
+<h3 id="背景尺寸：background-size属性"><a href="#背景尺寸：background-size属性" class="headerlink" title="背景尺寸：background-size属性"></a>背景尺寸：<code>background-size</code>属性</h3><p><code>background-size</code>属性：设置背景图片的尺寸。</p>
+<p>格式举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 宽、高的具体数值 */</span></span><br><span class="line">background-size: <span class="number">500</span>px <span class="number">500</span>px;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 宽高的百分比 */</span></span><br><span class="line">background-size: <span class="number">50</span>% <span class="number">50</span>%;   <span class="comment">// 如果两个属性值相同，可以简写成：background-size: 50%;</span></span><br><span class="line"></span><br><span class="line">background-size: <span class="number">100</span>% auto;  <span class="comment">//这个属性可以自己试验一下。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* cover：会自动调整缩放比例，保证图片始终填充满背景区域，如有溢出部分则会被隐藏。 */</span></span><br><span class="line">background-size: cover;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* contain：会自动调整缩放比例，保证图片始终完整显示在背景区域。  */</span></span><br><span class="line">background-size: contain;</span><br></pre></td></tr></table></figure>
+<p>这里对属性值 <code>cover</code> 和 <code>contain</code>进行再次强调：</p>
+<ul>
+<li><p><code>cover</code>：会自动调整缩放比例，保证图片始终<strong>填充满</strong>背景区域，如有<strong>溢出部分</strong>则会被隐藏。也就是说，保证背景图片完全覆盖盒子，但不能保证完整显示。</p>
+</li>
+<li><p><code>contain</code>：会自动调整缩放比例，保证图片始终<strong>完整显示</strong>在背景区域。也就是说，保证背景图片最大化地在盒子里，<strong>等比例</strong>显示，但不保证能铺满盒子。</p>
+</li>
+</ul>
+<h3 id="背景原点：background-origin-属性"><a href="#背景原点：background-origin-属性" class="headerlink" title="背景原点：background-origin 属性"></a>背景原点：<code>background-origin</code> 属性</h3><p><code>background-origin</code> 属性：控制背景从什么地方开始显示。</p>
+<p>格式举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* 从 padding-box 内边距开始显示背景图 */</span></span><br><span class="line">background-origin: padding-box;           <span class="comment">//默认值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 从 border-box 边框开始显示背景图  */</span></span><br><span class="line">background-origin: border-box;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 从 content-box 内容区域开始显示背景图  */</span></span><br><span class="line">background-origin: content-box;</span><br></pre></td></tr></table></figure>
+<p>如果属性值设置成了<code>border-box</code>，那边框部分也会显示图片哦。</p>
+<p>如下图所示：</p>
+<p><img src="http://img.smyhvae.com/20180207_2115.png" alt=""></p>
+<h3 id="背景裁剪：background-clip属性"><a href="#背景裁剪：background-clip属性" class="headerlink" title="背景裁剪：background-clip属性"></a>背景裁剪：<code>background-clip</code>属性</h3><p>格式举例：</p>
+<p><code>background-clip: content-box;</code>   超出的部分，将裁剪掉。属性值可以是：</p>
+<ul>
+<li><p><code>border-box</code> 超出 border-box 的部分，将裁剪掉</p>
+</li>
+<li><p><code>padding-box</code> 超出 padding-box 的部分，将裁剪掉</p>
+</li>
+<li><p><code>content-box</code> 超出 content-box 的部分，将裁剪掉</p>
+</li>
+</ul>
+<p>假设现在有这样的属性设置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background-origin: border-box;</span><br><span class="line"></span><br><span class="line">background-clip: content-box;</span><br></pre></td></tr></table></figure>
+<p>上方代码的意思是，背景图片从<strong>边框部分</strong>开始加载，但是呢，超出<strong>内容区域</strong>的部分将被裁减掉。</p>
+<h3 id="同时设置多个背景"><a href="#同时设置多个背景" class="headerlink" title="同时设置多个背景"></a>同时设置多个背景</h3><p>我们可以给一个盒子同时设置多个背景，用以逗号隔开即可。可用于自适应局。</p>
+<p>代码举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            height: 416px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 给盒子加多个背景，按照背景语法格式书写，多个背景使用逗号隔开 */</span></span></span><br><span class="line"><span class="undefined">            background: url(images/bg1.png) no-repeat left top,</span></span><br><span class="line"><span class="undefined">            url(images/bg2.png) no-repeat right top,</span></span><br><span class="line"><span class="undefined">            url(images/bg3.png) no-repeat right bottom,</span></span><br><span class="line"><span class="undefined">            url(images/bg4.png) no-repeat left bottom,</span></span><br><span class="line"><span class="undefined">            url(images/bg5.png) no-repeat center;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>实现效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180207_2140.gif" alt=""></p>
+<p>上方代码中，我们其实给盒子设置了五张小图，拼成的一张大图。当改变浏览器窗口大小时，可以自适应布局。</p>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><p>渐变是CSS3当中比较丰富多彩的一个特性，通过渐变我们可以实现许多炫丽的效果，有效的减少图片的使用数量，并且具有很强的适应性和可扩展性。</p>
+<p>渐变分为：</p>
+<ul>
+<li><p>线性渐变：沿着某条直线朝一个方向产生渐变效果。</p>
+</li>
+<li><p>径向渐变：从一个<strong>中心点</strong>开始沿着<strong>四周</strong>产生渐变效果。</p>
+</li>
+<li><p>重复渐变。</p>
+</li>
+</ul>
+<p>见下图：</p>
+<p><img src="http://img.smyhvae.com/20180208_1140.png" alt=""></p>
+<p>注意，渐变属于背景图片属性<code>background-image</code>的属性值。我们依次来看一下。</p>
+<h3 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h3><p>格式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">background-image: linear-gradient(方向, 起始颜色, 终止颜色);</span><br><span class="line"></span><br><span class="line">background-image: linear-gradient(to right, yellow, green);</span><br></pre></td></tr></table></figure>
+<p>参数解释：</p>
+<ul>
+<li>方向可以是：<code>to left</code>、<code>to right</code>、<code>to top</code>、<code>to bottom</code>、角度<code>30deg</code>（指的是顺时针方向30°）。</li>
+</ul>
+<p>格式举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            width: 500px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            margin: 10px auto;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        /* 语法：</span></span><br><span class="line"><span class="undefined">            linear-gradient(方向，起始颜色，终止颜色);</span></span><br><span class="line"><span class="undefined">            方向：to left   to right  to top   to bottom 　角度　30deg</span></span><br><span class="line"><span class="undefined">            起始颜色</span></span><br><span class="line"><span class="undefined">            终止颜色</span></span><br><span class="line"><span class="undefined">        */</span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(to right, yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/* 不写方向，表示默认的方向是：从上往下 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/* 方向可以指定角度 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(3)</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 100px;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(135deg, yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/* 0%的位置开始出现黄色，40%的位置开始出现红色的过度。70%的位置开始出现绿色的过度，100%的位置开始出现蓝色 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(4)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(to right,</span></span><br><span class="line"><span class="undefined">            yellow 0%,</span></span><br><span class="line"><span class="undefined">            red 40%,</span></span><br><span class="line"><span class="undefined">            green 70%,</span></span><br><span class="line"><span class="undefined">            blue 100%);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/* 颜色之间，出现突变 */</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(5)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(45deg,</span></span><br><span class="line"><span class="undefined">            yellow 0%,</span></span><br><span class="line"><span class="undefined">            yellow 25%,</span></span><br><span class="line"><span class="undefined">            blue 25%,</span></span><br><span class="line"><span class="undefined">            blue 50%,</span></span><br><span class="line"><span class="undefined">            red 50%,</span></span><br><span class="line"><span class="undefined">            red 75%,</span></span><br><span class="line"><span class="undefined">            green 75%,</span></span><br><span class="line"><span class="undefined">            green 100%</span></span><br><span class="line"><span class="undefined">            );</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(6)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(to right,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#000</span> 0%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#000</span> 25%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#fff</span> 25%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#fff</span> 50%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#000</span> 50%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#000</span> 75%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#fff</span> 75%,</span></span><br><span class="line"><span class="css">            <span class="selector-id">#fff</span> 100%</span></span><br><span class="line"><span class="undefined">            );</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180207_2222.png" alt=""></p>
+<p><strong>举例</strong>：按钮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS3 渐变<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        html, body &#123;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#f8fcd4</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 800px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            padding-top: 50px;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*设置按钮基本样式*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.nav</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="undefined">            display: inline-block;</span></span><br><span class="line"><span class="undefined">            width: 100px;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 30px;</span></span><br><span class="line"><span class="undefined">            font-size: 14px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">            text-decoration: none;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#e59500</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#FFB700</span>;</span></span><br><span class="line"><span class="undefined">            background-image: linear-gradient(</span></span><br><span class="line"><span class="undefined">                    to bottom,</span></span><br><span class="line"><span class="css">                    <span class="selector-id">#FFB700</span> 0%,</span></span><br><span class="line"><span class="css">                    <span class="selector-id">#FF8C00</span> 100%</span></span><br><span class="line"><span class="undefined">            );</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>导航1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>导航2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>导航3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>导航4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>导航5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>导航6<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="http://img.smyhvae.com/20180207_2301.png" alt=""></p>
+<h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background-image: radial-gradient(辐射的半径大小, 中心的位置, 起始颜色, 终止颜色);</span><br><span class="line"></span><br><span class="line">background-image: radial-gradient(100px at center,yellow ,green);</span><br></pre></td></tr></table></figure>
+<p>解释：围绕中心点做渐变，半径是150px，从黄色到绿色做渐变。</p>
+<p>中心点的位置可以是：at  left  right  center bottom  top。如果以像素为单位，则中心点参照的是盒子的左上角。</p>
+<p>当然，还有其他的各种参数。格式举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            width: 250px;</span></span><br><span class="line"><span class="undefined">            height: 250px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">            margin: 20px;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        /*</span></span><br><span class="line"><span class="undefined">            径向渐变：</span></span><br><span class="line"><span class="undefined">            radial-gradient（辐射的半径大小, 中心的位置，起始颜色，终止颜色）;</span></span><br><span class="line"><span class="undefined">            中心点位置：at  left  right  center bottom  top</span></span><br><span class="line"><span class="undefined">        */</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*辐射半径为100px，中心点在中间*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: radial-gradient(100px at center, yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*中心点在左上角*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(3)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: radial-gradient(at left top, yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: radial-gradient(at 50px 50px, yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*设置不同的颜色渐变*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(4)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: radial-gradient(100px at center,</span></span><br><span class="line"><span class="undefined">            yellow 0%,</span></span><br><span class="line"><span class="undefined">            green 30%,</span></span><br><span class="line"><span class="undefined">            blue 60%,</span></span><br><span class="line"><span class="undefined">            red 100%);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="comment">/*如果辐射半径的宽高不同，那就是椭圆*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(5)</span> &#123;</span></span><br><span class="line"><span class="undefined">            background-image: radial-gradient(100px 50px at center, yellow, green);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180207_2256.png" alt=""></p>
+<p><strong>举例：</strong>利用径向渐变和边框圆角的属性，生成按钮。代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS3 渐变<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            margin: 40px auto;</span></span><br><span class="line"><span class="undefined">            border-radius: 100px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            margin: 40px auto;</span></span><br><span class="line"><span class="undefined">            border-radius: 100px;</span></span><br><span class="line"><span class="undefined">            background-color: yellowgreen;</span></span><br><span class="line"><span class="undefined">            background-image: radial-gradient(</span></span><br><span class="line"><span class="undefined">                    200px at 100px 100px,</span></span><br><span class="line"><span class="undefined">                    rgba(0, 0, 0, 0),</span></span><br><span class="line"><span class="css">                    <span class="selector-tag">rgba</span>(0, 0, 0, 0<span class="selector-class">.5</span>)</span></span><br><span class="line"><span class="undefined">            );</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180208_1133.png" alt=""></p>
+<p>上图中，给第二个div设置的透明度是从0到0.5。如果设置的透明度是从0到0，则样式无变化，和第一个div一样。如果设置的透明度是从1到1，则盒子是全黑的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/05/第13篇博客/" rel="next" title="CSS3复习(一)">
+                <i class="fa fa-chevron-left"></i> CSS3复习(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LLawietF</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色"><span class="nav-number">1.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本"><span class="nav-number">2.</span> <span class="nav-text">文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#text-shadow：设置文本的阴影"><span class="nav-number">2.1.</span> <span class="nav-text">text-shadow：设置文本的阴影</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型中的-box-sizing-属性"><span class="nav-number">3.</span> <span class="nav-text">盒模型中的 box-sizing 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理兼容性问题：私有前缀"><span class="nav-number">4.</span> <span class="nav-text">处理兼容性问题：私有前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边框"><span class="nav-number">5.</span> <span class="nav-text">边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#边框圆角：border-radius-属性"><span class="nav-number">5.1.</span> <span class="nav-text">边框圆角：border-radius 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框阴影：box-shadow-属性"><span class="nav-number">5.2.</span> <span class="nav-text">边框阴影：box-shadow 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框图片"><span class="nav-number">5.3.</span> <span class="nav-text">边框图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景属性"><span class="nav-number">6.</span> <span class="nav-text">背景属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景尺寸：background-size属性"><span class="nav-number">6.1.</span> <span class="nav-text">背景尺寸：background-size属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景原点：background-origin-属性"><span class="nav-number">6.2.</span> <span class="nav-text">背景原点：background-origin 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景裁剪：background-clip属性"><span class="nav-number">6.3.</span> <span class="nav-text">背景裁剪：background-clip属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同时设置多个背景"><span class="nav-number">6.4.</span> <span class="nav-text">同时设置多个背景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">7.</span> <span class="nav-text">渐变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性渐变"><span class="nav-number">7.1.</span> <span class="nav-text">线性渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#径向渐变"><span class="nav-number">7.2.</span> <span class="nav-text">径向渐变</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LLawietF</span>
+
+  
+</div>
+
+<!--
+   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+   <span class="post-meta-divider">|</span>
+
+
+
+   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
