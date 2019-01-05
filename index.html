@@ -233,6 +233,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/05/第13篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/05/第13篇博客/" itemprop="url">CSS3复习(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-05T16:35:15+08:00">
+                2019-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          CSS3 选择器我们之前学过 CSS 的选择器，比如：
+12345678910111213141516171819div 标签选择器.box 类名选择器#box　id选择器div p 后代选择器div.box 交集选择器div,p,span 并集选择器div&gt;p 子代选择器* : 通配符div+p: 选中div后面相邻的第一个pdiv~p: 选中的div后面所有的p
+CSS3新增了许多灵活查找元素的方法，极大的提高了查找元素的效率和精准度。CSS3选择器与 jQuery 中所提供的绝大部分选择器兼容。
+属性选择器属性选择器的标志性符号是 []。
+匹配含义：
+1^：开头  $：结尾  *：包含
+格式：
+
+E[title] 选中页面的E元素，并且E存在 title 属性即可。
+
+E[title=&quot;abc&quot;]选中页面的E元素，并且E需要带有title属性，且属性值完全等于abc。
+
+E[attr~=val]  选择具有 att 属性且属性值为：用空格分隔的字词列表，其中一个等于 val 的E元素。
+
+E[attr|=val] 表示要么是一个单独的属性值，要么这个属性值是以“-”分隔的。
+
+E[title^=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属性,属性值以 abc 开头。
+
+E[title$=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属性,属性值以 abc 结尾。
+
+E[title*=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属性,属性值任意位置包含abc。
+
+
+比如说，我们用属性选择器去匹配标签的className，是非常方便的。
+这里我们用class属性来举例。代码举例：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/05/第13篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/04/第12篇博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1880,180 +2053,6 @@ PS：不进位，实际上能进位（奇淫知识点：255个标签，等于1�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/01/第3篇博客/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LLawietF">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LLawietF's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/01/第3篇博客/" itemprop="url">HTML复习(二)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-01T13:51:52+08:00">
-                2019-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          列表标签1、无序列表&lt;ul&gt;，无序列表中的每一项是&lt;li&gt;例如：
-12345&lt;ul&gt;	&lt;li&gt;默认1&lt;/li&gt;	&lt;li&gt;默认2&lt;/li&gt;	&lt;li&gt;默认3&lt;/li&gt;&lt;/ul&gt;
-效果：
-
-注意：
-
-li不能单独存在，必须包裹在ul里面；反过来说，ul的“儿子”不能是别的东西，只能有li。
-我们这里再次强调，ul的作用，并不是给文字增加小圆点的，而是增加无序列表的“语义”的。
-
-属性：
-
-type=&quot;属性值&quot;。属性值可以选： disc(实心原点，默认)，square(实心方点)，circle(空心圆)。效果如下：
-
-
-不光是&lt;ul&gt;标签有type属性，&lt;ul&gt;里面的&lt;li&gt;标签也有type属性（虽然说这种写法很少见）。效果如下：
-
-注意：项目符号可以是图片，但是通过CSS设置标记的背景图片来实现。
-当然了，列表之间是可以嵌套的。我们来举个例子：代码：
-1234567891011121314151617 &lt;ul&gt;&lt;li&gt;&lt;b&gt;北京市&lt;/b&gt;	&lt;ul&gt;		&lt;li&gt;海淀区&lt;/li&gt;		&lt;li&gt;朝阳区&lt;/li&gt;		&lt;li&gt;东城区&lt;/li&gt;	&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;广州市&lt;/b&gt;	&lt;ul&gt;		&lt;li&gt;天河区&lt;/li&gt;		&lt;li&gt;越秀区&lt;/li&gt;	&lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt;
-ul标签实际应用场景场景1 —— 导航条：
-
-场景2 —— li里面放置的内容可能很多：
-
-声明：ul的儿子，只能是li。但是li是一个容器级标签，li里面什么都能放，甚至可以再放一个ul。
-2、有序列表&lt;OL&gt;，里面的每一项是&lt;li&gt;英文单词：Ordered List。
-例如：
-12345&lt;ol &gt;	&lt;li&gt;列表1&lt;/li&gt;	&lt;li&gt;列表2&lt;/li&gt;	&lt
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/01/第3篇博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2104,7 +2103,7 @@ ul标签实际应用场景场景1 —— 导航条：
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
