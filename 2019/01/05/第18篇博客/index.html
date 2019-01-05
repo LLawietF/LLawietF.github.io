@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.smyhvae.com/20180224_2200.gif">
 <meta property="og:image" content="http://img.smyhvae.com/20180224_2240.png">
-<meta property="og:updated_time" content="2019-01-05T12:59:01.170Z">
+<meta property="og:updated_time" content="2019-01-05T13:01:21.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5复习（三）">
 <meta name="twitter:description" content="Web 存储随着互联网的快速发展，基于网页的应用越来越普遍，同时也变的越来越复杂，为了满足各种各样的需求，会经常性在本地存储大量的数据，传统方式我们以document.cookie来进行存储的，但是由于其存储大小只有4k左右，并且解析也相当的复杂，给开发带来诸多不便，HTML5规范则提出解决方案。 H5 中有两种存储的方式1、window.sessionStorage 会话存储：  保存在内存中。">
@@ -395,9 +395,7 @@
 <p>格式举例2：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"></span><br><span class="line"><span class="comment">#要缓存的文件</span></span><br><span class="line">CACHE:</span><br><span class="line">    images/img1.jpg</span><br><span class="line">    images/img2.jpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#指定必须联网才能访问的文件</span></span><br><span class="line">NETWORK:</span><br><span class="line">     images/img3.jpg</span><br><span class="line">     images/img4.jpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#当前页面无法访问是回退的页面</span></span><br><span class="line">FALLBACK:</span><br><span class="line">    404.html</span><br></pre></td></tr></table></figure>
 <p><strong>缓存清单文件怎么用：</strong></p>
-<p>（1）例如我们创建一个名为 <code>demo.appcache</code>的文件。例如：</p>
-<p>demo.appcache：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注释以#开头</span></span><br><span class="line"><span class="comment">#下面是要缓存的文件</span></span><br><span class="line">CACHE:</span><br><span class="line">    http://img.smyhvae.com/2016040101.jpg</span><br></pre></td></tr></table></figure>
+<p>（1）例如创建一个名为 <code>demo.appcache</code>的文件</p>
 <p>（2）在需要应用缓存在页面的根元素(html)里，添加属性manifest=”demo.appcache”。路径要保证正确。</p>
 
       
