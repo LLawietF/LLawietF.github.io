@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -337,50 +337,7 @@
 行内元素
 块级元素
 
-举一个例子，看看块级元素和行内元素的区别：
-
-上图中可以看到，p标签是块级元素，占据了整行，span标签是行内元素，只占据内容这一部分。
-现在我们尝试给两个标签设置宽高。效果如下：
-
-上图中，尝试给两个标签设置宽高，发现，宽高属性只对块级元素p生效。
-行内元素和块级元素的区别：（非常重要）
-行内元素：
-
-与其他行内元素并排；
-不能设置宽、高。默认的宽度，就是文字的宽度。
-
-块级元素：
-
-占一行，不能与其他任何元素并列；
-能接受宽、高。如果不设置宽度，那么宽度将默认变为父亲的100%。
-
-行内元素和块级元素的分类：
-从HTML的角度来讲，标签分为：
-
-文本级标签：p、span、a、b、i、u、em。
-容器级标签：div、h系列、li、dt、dd。
-
-
-PS：为甚么说p是文本级标签呢？因为p里面只能放文字&amp;图片&amp;表单元素，p里面不能放h和ul，p里面也不能放p。
-
-现在，从CSS的角度讲，CSS的分类和上面的很像，就p不一样：
-
-行内元素：除了p之外，所有的文本级标签，都是行内元素。p是个文本级，但是是个块级元素。
-
-块级元素：所有的容器级标签都是块级元素，还有p标签。
-
-
-
-行内元素和块级元素的相互转换块级元素可以转换为行内元素：1display: inline;
-行内元素转换为块级元素：1display: block;
-标准流里面的限制非常多，导致很多页面效果无法实现。如果我们现在就要并排、并且就要设置宽高，那该怎么办呢？办法是：脱离标准流！
-css中一共有三种手段，使一个元素脱离标准文档流：
-
-（1）浮动
-（2）绝对定位
-（3）固定定位
-
-浮动的性质性质1：浮动的元素脱标
+举一个例子，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -546,22 +503,7 @@ pc：皮卡Picas (1 皮卡 = 12 点)
 
 
 
-字体属性行高CSS中，所有的行，都有行高。盒子模型的padding，绝对不是直接作用在文字上的，而是作用在“行”上的。
-垂直方向来看，文字在自己的行里是居中的。比如，文字是14px，行高是24px，那么padding就是5px：
-
-为了严格保证字在行里面居中，我们的工程师有一个约定： 行高、字号，一般都是偶数。这样可以保证，它们的差一定偶数，就能够被2整除。
-如何让单行文本垂直居中小技巧：如果一段文本只有一行，如果此时设置行高 = 盒子高，就可以保证单行文本垂直居中。这个很好理解。
-上面这个小技巧，只适用于单行文本垂直居中，不适用于多行。如果想让多行文本垂直居中，还需要计算盒子的padding。计算方式如下：
-
-font字体属性css样式中，字体属性有以下几种：
-12345678p&#123;	font-size:50px; 		/*字体大小*/	line-height: 30px;      /*行高*/	font-family:幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/	font-style:italic ;		/*italic表示斜体，normal表示不倾斜*/	font-weight:bold;	/*粗体：属性值写成bolder也可以*/	font-variant:small-caps;  /*小写变大写*/&#125;
-1、字号、行高、字体三大属性：
-（1）字号：
-1font-size:14px;
-（2）行高：
-1line-height:24px;
-（3）字体：（font-family就是“字体”，family是“家庭”的意思）
-1font-family:&qu
+字体属性行高CSS中，所有的
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -718,36 +660,7 @@ font字体属性css样式中，字体属性有以下几种：
 【总结】需要注意的是：
 （1）所有的标签，都可以是选择器。比如ul、li、label、dt、dl、input。
 （2）无论这个标签藏的多深，一定能够被选择上。
-（3）选择的所有，而不是一个。
-2、ID选择器：规定用#来定义针对某一个特定的标签来使用，只能使用一次。css中的ID选择器以”#”来定义。
-举例：
-123#mytitle&#123;	border:3px dashed green;&#125;
-id选择器的选择符是“#”。
-任何的HTML标签都可以有id属性。表示这个标签的名字。这个标签的名字，可以任取，但是：
-
-（1）只能有字母、数字、下划线。
-（2）必须以字母开头。
-（3）不能和标签同名。比如id不能叫做body、img、a。
-
-另外，特别强调的是：HTML页面，不能出现相同的id，哪怕他们不是一个类型。比如页面上有一个id为pp的p，一个id为pp的div，是非法的！
-一个标签可以被多个css选择器选择：
-比如，我们可以同时让标签选择器和id选择器作用于同一个标签。如下：
-
-然后我们通过网页的审查元素看一下效果：
-
-3、类选择器：规定用圆点.来定义css中用.来表示类。举例如下：
-123.one&#123;	width:800px;&#125;
-和id非常相似，任何的标签都可以携带id属性和class属性。class属性的特点：
-
-特性1：类选择器可以被多种标签使用。
-
-特性2：同一个标签可以使用多个类选择器。用空格隔开。举例如下：
-
-
-1&lt;h3 class="teshu  zhongyao"&gt;我是一个h3啊&lt;/h3&gt;
-问题：到底用id还是用class？
-答案：尽可能的用class，除非极特殊的情况可以用id。
-原因：id是js用的。也就是说，js要通过id属性得到标签，所以css层面尽量不用id，要不
+（3）选
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -913,21 +826,6 @@ CSS盒模型和IE盒模型的区别：
 
 IE盒子模型中，width 和 height 指的是内容区域+border+padding的宽度和高度。
 
-
-&lt;body&gt;标签也有margin&lt;body&gt;标签有必要强调一下。很多人以为&lt;body&gt;标签占据的是整个页面的全部区域，其实是错误的，正确的理解是这样的：整个网页最大的盒子是&lt;document&gt;，即浏览器。而&lt;body&gt;是&lt;document&gt;的儿子。浏览器给&lt;body&gt;默认的margin大小是8个像素，此时&lt;body&gt;占据了整个页面的一大部分区域，而不是全部区域。
-认识width、height一定要知道，在前端开发工程师眼中，世界中的一切都是不同的。
-比如说，丈量稿纸，前端开发工程师只会丈量内容宽度：
-
-下面这两个盒子，真实占有宽高，都是302*302：
-盒子1：
-123456.box1&#123;	width: 100px;	height: 100px;	padding: 100px;	border: 1px solid red;&#125;
-盒子2：
-123456.box2&#123;	width: 250px;	height: 250px;	padding: 25px;	border: 1px solid red;&#125;
-真实占有宽度 = 左border + 左padding + width + 右padding + 右border
-上面这两个盒子的盒模型图如下：
-
-如果想保持一个盒子的真实占有宽度不变，那么加width的时候就要减padding。加padding的时候就要减width。因为盒子变胖了是灾难性的，这会把别的盒子挤下去。
-认识paddingpadding区
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1088,35 +986,7 @@ IE盒子模型中，width 和 height 指的是内容区域+border+padding的宽�
 CSS的层叠性层叠性：计算权重层叠性：就是css处理冲突的能力。 所有的权重计算，没有任何兼容问题！
 
 上图中，三种选择器同时给P标签增加颜色的属性，但是，文字最终显示的是蓝色，这个时候，就出现了层叠性的情况。
-当多个选择器，选择上了某个元素的时候，要按照如下顺序统计权重：
-
-id的数量，类的数量，标签的数量
-
-因为对于相同方式的样式表，其选择器排序的优先级为：ID选择器 &gt; 类选择器 &gt; 标签选择器
-层叠性举例举例1：计算权重
-如上图所示，统计各个选择器的数量，优先级高的胜出。文字的颜色为红色。
-PS：不进位，实际上能进位（奇淫知识点：255个标签，等于1个类名）但是没有实战意义！
-举例2：权重相同时
-上图可以看到，第一个样式和第二个样式的权重相同。但第二个样式的书写顺序靠后，因此以第二个样式为准（就近原则）。
-举例3：具有实战性的例子
-现在我要让一个列表实现上面的这种样式：第一个li为红色，剩下的li全部为蓝色。
-如果写成下面这种代码是无法实现的：
-
-无法实现的原因很简单，计算一下三个选择器的权重就清楚了，显然第二个样式被第一个样式表覆盖了。
-正确的做法是：（非常重要）
-
-上图中，第二个样式比第一个样式的权重要大。因此在实战中可以实现这种效果：所有人当中，让某一个人为红，让其他所有人为蓝。
-这种方式好用是好用，但用好很难。
-就拿上方代码来举例，为了达到这种效果，即为了防止权重不够，比较稳妥的做法是：把第二个样式表照着第一个样式表来写，在此基础上，给第二个样式表再加一个权重。
-举例4：继承性造成的影响这里需要声明一点：
-
-如果不能直接选中某个元素，通过继承性影响的话，那么权重是0。
-
-为了验证上面这句话，我们来看看下面这样的例子：
-
-另外：如果大家都是0，那么有一个就近原则：谁描述的近，听谁的。举例如下：
-
-层叠性：权重计算的问题大总结层叠性。层叠性是一种能力，就是处理冲突的能力。当不同选择器，对
+当多个选择器，选择上了某个
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1275,22 +1145,7 @@ li不能单独存在，必须包裹在ul里面；反过来说，ul的“儿子�
 
 属性：
 
-type=&quot;属性值&quot;。属性值可以选： disc(实心原点，默认)，square(实心方点)，circle(空心圆)。效果如下：
-
-
-不光是&lt;ul&gt;标签有type属性，&lt;ul&gt;里面的&lt;li&gt;标签也有type属性（虽然说这种写法很少见）。效果如下：
-
-注意：项目符号可以是图片，但是通过CSS设置标记的背景图片来实现。
-当然了，列表之间是可以嵌套的。我们来举个例子：代码：
-1234567891011121314151617 &lt;ul&gt;&lt;li&gt;&lt;b&gt;北京市&lt;/b&gt;	&lt;ul&gt;		&lt;li&gt;海淀区&lt;/li&gt;		&lt;li&gt;朝阳区&lt;/li&gt;		&lt;li&gt;东城区&lt;/li&gt;	&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;广州市&lt;/b&gt;	&lt;ul&gt;		&lt;li&gt;天河区&lt;/li&gt;		&lt;li&gt;越秀区&lt;/li&gt;	&lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt;
-ul标签实际应用场景场景1 —— 导航条：
-
-场景2 —— li里面放置的内容可能很多：
-
-声明：ul的儿子，只能是li。但是li是一个容器级标签，li里面什么都能放，甚至可以再放一个ul。
-2、有序列表&lt;OL&gt;，里面的每一项是&lt;li&gt;英文单词：Ordered List。
-例如：
-12345&lt;ol &gt;	&lt;li&gt;列表1&lt;/li&gt;	&lt;li&gt;列表2&lt;/li&gt;	&lt
+type=&quot;属性值&quot;。属性值可以选： disc(实心原点，默认)，squa
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1440,53 +1295,7 @@ ul标签实际应用场景场景1 —— 导航条：
           
           W3C标准中文名：万维网联盟，外文名：World Wide Web Consortium          
 万维网联盟标准不是某一个标准，而是一些列标准的集合。网页主要有三部分组成：结构（HTML）、表现（CSS）、行为（JavaScript）。
-对应的标准也有三方面：结构化标准主要包括XHTML和XML，表现标准语言主要包括CSS、行为标准主要包括（如W3C DOM）、ECMAScript等。这些标准大部分是W3C起草发布，也有一是其他标准组织制定的标准，比如ECMAScript（European Computer Manufacturers Association）的ECMAScript的标准。
-浏览器
-
-
-浏览器
-内核
-
-
-
-
-IE
-trident
-
-
-chrome / opera
-blink
-
-
-火狐
-gecko
-
-
-Safari
-webkit
-
-
-
-HTML颜色颜色表示：
-
-纯单词表示：red、green、blue、orange、gray等
-10进制表示：rgb(255,0,0)
-16进制表示：#FF0000、#0000FF、#00FF00等
-
-RGB色彩模式：
-
-自然界中所有的颜色都可以用红、绿、蓝(RGB)这三种颜色波长的不同强度组合而得，这就是人们常说的三原色原理。
-RGB三原色也叫加色模式，这是因为当我们把不同光的波长加到一起的时候，可以得到不同的混合色。例：红+绿=黄色，红+蓝＝紫色，绿+蓝=青
-在数字视频中，对RGB三基色各进行8位编码就构成了大约1678万种颜色，这就是我们常说的真彩色。所有显示设备都采用的是RGB色彩模式。
-RGB各有256级(0-255)亮度，256级的RGB色彩总共能组合出约1678万种色彩，即256×256×256=16777216。
-
-头标签头标签都放在头部分之间。包括：&lt;title&gt;、&lt;base&gt;、&lt;meta&gt;、&lt;link&gt;
-
-&lt;title&gt;：指定整个网页的标题，在浏览器最上方显示。
-&lt;base&gt;：为页面上的所有链接规标题栏显示的内容定默认地址或默认目标。
-&lt;meta&gt;：提供有关页面的基本信息
-&lt;body&gt;：用于定义HTML文档所要显示的内容，也称为主体标签。我们所写的代码必须放在此标签內。
-&lt;link&gt;：
+对应的标准也有三方面：结构化标准主要包括XHTML和XML，表现标准语言主要包括CSS、行为标准主要包括（如W3C DOM）、ECMAScript等。这些标准大部分是W3C起草发布，也有一是其他标准组织制定的标准，比如ECMAScript（European Computer Manufacturers Association）的ECMAScript
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1641,22 +1450,7 @@ RGB各有256级(0-255)亮度，256级的RGB色彩总共能组合出约1678万种
 2.在电脑的任意位置创建博客文件夹,通过命令进入文件夹
 3.安装hexo在博客文件夹中依次输入以下命令:
 123456npm install hexo -ghexo -v //检查hexo是否安装成功hexo inithexo installhexo ghexo s
-依次输完命令后,在浏览器地址栏中输入http://localhost:4000,如果出现下图的情况，说明安装成功
-
-4.连接hexo与Github Pages,设置Git的用户名和email打开Git Bash,依次输入以下命令
-12git config --global user.name &quot;你的github用户名&quot;git config --global user.email &quot;登录github的邮箱&quot;
-5.输入cd ~/.ssh，检查是否有.ssh的文件夹,如果没有在C:\Users\电脑登录的用户名下创建名为.ssh的文件夹6.输入ssh-keygen -t rsa -C “登录Github的邮箱”，连续三个回车输入eval “$(ssh-agent -s)”
-输入ssh-add ~/.ssh/id_rsa
-7.点击Github头像下的setting,新建一个new ssh key，复制id_rsa.pub文件里的内容
-
-
-在Git Bash中输入ssh -T git@github.com，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了
-
-8.在博客文件夹中，找到_config.yml文件,修改deploy
-ps:repository的值为下图中所选区域
-
-9.如何建立博客?打开cmd,切换到博客文件夹输入命令：hexo new post “博客名”后在博客文件夹/source/_posts/中可以看到新建的博客文件(扩展名为.md)
-使用编辑器编辑好文章，在生成以及部署文章前，在cmd中输入：npm install hexo
+依次输完命令后
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1816,7 +1610,7 @@ ps:repository的值为下图中所选区域
 
 
 
-   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v</div>
+   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v</div>
 
 -->
 
@@ -1916,13 +1710,6 @@ ps:repository的值为下图中所选区域
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 

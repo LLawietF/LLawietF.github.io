@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -339,28 +339,6 @@ H5 中有两种存储的方式1、window.sessionStorage 会话存储：
 2、window.localStorage 本地存储：
 
 有可能保存在浏览器内存里，有可能在硬盘里。
-
-永久生效，除非手动删除（比如清理垃圾的时候）。
-
-可以多窗口共享。
-
-
-Web 存储的特性（1）设置、读取方便。
-（2）容量较大，sessionStorage 约5M、localStorage 约20M。
-（3）只能存储字符串，可以将对象 JSON.stringify() 编码后存储。
-常见 API设置存储内容：
-1setItem(key, value);
-PS：可以新增一个 item，也可以更新一个 item。
-读取存储内容：
-1getItem(key);
-根据键，删除存储内容：
-1removeItem(key);
-清空所有存储内容：
-1clear();
-根据索引值来获取存储内容：
-1key(n);
-sessionStorage 的 API 举例：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head lang="en"&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;input type="text"/&gt;&lt;button&gt;sesssionStorage存储&lt;/button&gt;&lt;button&gt;sesssionStorage获取&lt;/button&gt;&lt;button&g
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -513,23 +491,7 @@ sessionStorage 的 API 举例：
 在HTML5的规范中，我们可以通过为元素增加 draggable=&quot;true&quot; 来设置此元素是否可以进行拖拽操作，其中图片、链接默认是开启拖拽的。
 1、拖拽元素页面中设置了 draggable=&quot;true&quot; 属性的元素。
 举例如下：
-1234567891011121314151617181920&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&gt;Title&lt;/title&gt;    &lt;link rel="stylesheet" href="css/font-awesome.min.css"&gt;    &lt;style&gt;    .box1&#123;        width: 200px;        height: 200px;        background-color: green;    &#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;!--给 box1 增加拖拽的属性--&gt;    &lt;div class="box1" draggable="true"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-效果如下：
-
-上图中，我们给 box1 增加了draggable=&quot;true&quot; 属性之后，发现 box1 是可以拖拽的。但是拖拽之后要做什么事情呢？这就涉及到事件监听。
-拖拽元素的事件监听：（应用于拖拽元素）
-
-ondragstart当拖拽开始时调用
-
-ondragleave    当鼠标离开拖拽元素时调用
-
-ondragend    当拖拽结束时调用
-
-ondrag         整个拖拽过程都会调用
-
-
-代码演示：
-1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;
+1234567891011121314151617181920&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&g
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -679,34 +641,7 @@ ondrag         整个拖拽过程都会调用
           
           多列布局类似报纸或杂志中的排版方式，上要用以控制大篇幅文本。用得不多。
 格式举例：
-123456789101112131415161718192021.wrapper&#123;    /* 分成几列 */    -webkit-column-count: 3;    /* 每列之间，用分割线隔开 */    -webkit-column-rule: 1px dashed red;    /* 设置列之间的间距 */    -webkit-column-gap: 60px;    /* 设置每一列的宽度 */    /* -webkit-column-width: 400px; */    /*-webkit- -moz-  -ms- -o-*/&#125;h4&#123;    /* 设置跨列：让h4这标题位于整个文flex-wrap本的标题，而不是处在某一列之中*/    -webkit-column-span: all;    text-align: center;&#125;
-备注：上面这几个属性涉及到兼容性问题，需要加私有前缀。
-flex：伸缩布局CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强。其强大的伸缩性，在响应式开中可以发挥极大的作用。
-
-如上图所示，有几个概念需要了解一下：
-
-主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向，从左向右。
-
-侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向，从上往下。
-
-
-PS：主轴和侧轴并不是固定不变的，通过flex-direction可以互换。
-设置伸缩布局的步骤（1）指定一个盒子为伸缩布局：
-1display: flex;
-（2）设置 flex-direction 属性来调整此盒的子元素的布局方式。默认的方向是水平方向。
-（3）可互换主侧轴，也可改变主侧轴的方向。
-各属性详解1、flex-direction属性：设置主轴方向。
-
-flex-direction: row; 设置主轴方向，默认是水平方向。属性值可以是：
-row 水平方向（默认值）
-reverse-row 反转
-column 垂直方向
-reverse-column 反转列
-
-
-
-代码演示：
-12345678910111213141516171819202122232425262728293031
+123456789101112131415161718192021.wrapper&#123;    /* 分成几列 */    -webkit-column-count: 3;    /* 每列之间，用分割线隔开 */    -webkit-column-rule: 1px dashed red;    /* 设置列之间的间距 */    -webkit-column-gap: 60px;    /* 设置每一列的宽度 */    /* -webkit-column-width: 400px; */    /
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -867,36 +802,7 @@ transition-property: all;  如果希望所有的属性都发生过渡，就使�
 
 transition-duration: 1s; 过渡的持续时间。
 
-transition-timing-function: linear;  运动曲线。属性值可以是：
-
-linear 线性
-ease  减速
-ease-in 加速
-ease-out 减速
-ease-in-out  先加速后减速
-
-
-transition-delay: 1s; 过渡延迟。多长时间后再执行这个过渡动画。
-
-
-上面的四个属性也可以写成综合属性：
-123transition: 让哪些属性进行过度 过渡的持续时间 运动曲线 延迟时间;transition: all 3s linear 0s;
-其中，transition-property这个属性是尤其需要注意的，不同的属性值有不同的现象。我们来示范一下。
-如果设置 transition-property: width，意思是只让盒子的宽度在变化时进行过渡。效果如下：
-
-如果设置 transition-property: all，意思是让盒子的所有属性（包括宽度、背景色等）在变化时都进行过渡。效果如下：
-
-2D 转换转换是 CSS3 中具有颠覆性的一个特征，可以实现元素的位移、旋转、变形、缩放，甚至支持矩阵方式。
-转换再配合过渡和动画，可以取代大量早期只能靠 Flash 才可以实现的效果。
-在 CSS3 当中，通过 transform 转换来实现 2D 转换或者 3D 转换。
-
-2D转换包括：缩放、移动、旋转。
-
-我们依次来讲解。
-1、缩放：scale格式：
-123transform: scale(x, y);transform: scale(2, 0.5);
-参数解释： x：表示水平方向的缩放倍数。y：表示垂直方向的缩放倍数。如果只写一个值就是等比例缩放。
-取值：大于1表示放大，小于1表示缩小。不能
+transition-timing-function: linear;  运
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1059,34 +965,7 @@ HSLA 举例：
 1background-color: hsla(240,50%,50%,0.4);
 解释：
 
-H 色调，取值范围 0~360。0或360表示红色、120表示绿色、240表示蓝色。
-
-S 饱和度，取值范围 0%~100%。值越大，越鲜艳。
-
-L 亮度，取值范围 0%~100%。亮度最大时为白色，最小时为黑色。
-
-A 透明度，取值范围 0~1。
-
-
-如果不知道 H 的值该设置多少，我们不妨来看一下色盘：
-
-推荐链接：配色宝典
-关于设置透明度的其他方式：
-（1）opacity: 0.3; 会将整个盒子及子盒子设置透明度。也就是说，当盒子设置半透明的时候，会影响里面的子盒子。
-（2）background: transparent; 可以单独设置透明度，但设置的是完全透明（不可调节透明度）。
-文本text-shadow：设置文本的阴影格式举例：
-1text-shadow: 20px 27px 22px pink;
-参数解释：水平位移 垂直位移 模糊程度 阴影颜色。
-效果举例：
-
-盒模型中的 box-sizing 属性CSS3 对盒模型做出了新的定义，即允许开发人员指定盒子宽度和高度的计算方式。
-这就需要用到 box-sizing属性。它的属性值可以是：content-box、border-box。解释如下。
-外加模式：（css的默认方式）
-1box-sizing: content-box;
-解释：此时设置的 width 和 height 是内容区域的宽高。盒子的实际宽度 = 设置的 width + padding + border。此时改变 padding 和 border 的大小，也不会改变内容的宽高，而是盒子的总宽高发生变化。
-内减模式：【需要注意】
-1box-sizing: border-box;
-解释：此时设置的 width 和 height 是盒子
+H 色调，取值范围 0~360。0或360表示红色、120表示绿色、240表示蓝
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1239,27 +1118,7 @@ A 透明度，取值范围 0~1。
 CSS3新增了许多灵活查找元素的方法，极大的提高了查找元素的效率和精准度。CSS3选择器与 jQuery 中所提供的绝大部分选择器兼容。
 属性选择器属性选择器的标志性符号是 []。
 匹配含义：
-1^：开头  $：结尾  *：包含
-格式：
-
-E[title] 选中页面的E元素，并且E存在 title 属性即可。
-
-E[title=&quot;abc&quot;]选中页面的E元素，并且E需要带有title属性，且属性值完全等于abc。
-
-E[attr~=val]  选择具有 att 属性且属性值为：用空格分隔的字词列表，其中一个等于 val 的E元素。
-
-E[attr|=val] 表示要么是一个单独的属性值，要么这个属性值是以“-”分隔的。
-
-E[title^=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属性,属性值以 abc 开头。
-
-E[title$=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属性,属性值以 abc 结尾。
-
-E[title*=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属性,属性值任意位置包含abc。
-
-
-比如说，我们用属性选择器去匹配标签的className，是非常方便的。
-这里我们用class属性来举例。代码举例：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211
+1^：开头  $：结尾  *：
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1429,26 +1288,7 @@ E[title*=&quot;abc&quot;] 选中页面的E元素，并且E需要带有 title 属
 &lt;time&gt; 表示日期
 
 
-本质上新语义标签与&lt;div&gt;、&lt;span&gt;没有区别，只是其具有表意性，使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别，可以理解成&lt;div class=&quot;nav&quot;&gt; 相当于&lt;nav&gt;。
-PS：单标签不用写关闭符号。
-新语义标签的兼容性处理IE8 及以下版本的浏览器不支持 H5 和 CSS3。解决办法：引入html5shiv.js文件。
-引入时，需要做if判断，具体代码如下：
-12345&lt;!--  条件注释 只有ie能够识别--&gt;&lt;!--[if lte ie 8]&gt;    &lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
-上方代码是条件注释：虽然是注释，但是IE浏览器可以识别出来。解释一下：
-
-l：less 更小
-
-t：than 比
-
-e：equal等于
-
-g：great 更大
-
-
-PS:我们在测试 IE 浏览器的兼容的时候，可以使用软件 ietest，模拟IE6-IE11。
- 在不支持HTML5新标签的浏览器，会将这些新的标签解析成行内元素(inline)对待，所以我们只需要将其转换成块元素(block)即可使用。
- 但是在IE9版本以下，并不能正常解析这些新标签，但是可以识别通过document.createElement(‘tagName’)创建的自定义标签。于是我们的解决方案就是：将HTML5的新标签全部通过document.createElement(‘tagName’)来创建一遍，这样IE低版本也能正常解析HTML5新标签了。
- 当然，在实际开发中我们
+本质上新语义标签与&lt;div&gt;、&lt;span&gt;没有区别，只是其具有
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1776,29 +1616,7 @@ CSS3属性
 （4）方式四：
 1opacity: 0;       //设置盒子的透明度（不建议，因为内容也会半透明），占位置
 （4）方式五：
-1Position/top/left/...-999px   //把盒子移得远远的，占位置。
-（5）方式六：
-1margin-left: 1000px;
-设置盒子的半透明方式一：opacity: 0.4。优点是方便。缺点是：里面的内容也会半透明
-方式二：css3的技术来解决半透明。如下：
-
-background: rgba(0,0,0,0.3);
-
-background: rgba(0,0,0,.3);
-
-
-备注：a指的是alpha透明度。
-给标签的形状设置为圆角矩形12border-radius: 50%;border-radius: 10px 0 0 10px;
-行高的问题：儿子把父亲撑开比如对于下面这样的标签：
-123&lt;div&gt;	&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/div&gt;
-前置条件：如果我们给父亲div的行高设为31px，然后给儿子a的行高也设置为31
-结果：当我们给儿子a设置了字体属性之后，会发现，父亲被撑高为32px了。因为font字体自身会比较大，多撑出了一个像素。
-解决办法：行内元素尽量不要设置font属性。对于行内元素而言，如果它和父亲都设置了行高，就不要去给自己设置font属性了。要么就，不要同时设置行高。
-背景图不能撑开盒子高和行高都可以城开盒子，但背景图不能撑开盒子。
-超链接&lt;a&gt;的href跳转一个空白的超链接如下：
-1&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
-当点击超链接时，由于 href 的属性值的不同，可以产生很多种情况：
-1234567href=""                    //刷新
+1Position/top/left/...-999px   
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1953,35 +1771,7 @@ background: rgba(0,0,0,.3);
 相对定位的用途如果想做“压盖”效果（把一个div放到另一个div之上），我们一般不用相对定位来做。相对定位，就两个作用：
 
 （1）微调元素
-（2）做绝对定位的参考，子绝父相
-
-相对定位的定位值
-left：盒子右移
-
-right：盒子左移
-
-top：盒子下移
-
-bottom：盒子上移
-
-
-PS：负数表示相反的方向。
-绝对定位绝对定位：定义横纵坐标。原点在父容器的左上角或左下角。横坐标用left表示，纵坐标用top或者bottom表示。
-格式举例如下：
-123position: absolute;  /*绝对定位*/left: 10px;  /*横坐标*/top/bottom: 20px;  /*纵坐标*/
-绝对定位脱标绝对定位的盒子脱离了标准文档流。
-所以，所有的标准文档流的性质，绝对定位之后都不遵守了。
-绝对定位之后，标签就不区分所谓的行内元素、块级元素了，不需要display:block就可以设置宽、高了。
-绝对定位的参考点（重要）（1）如果用top描述，那么参考点就是页面的左上角，而不是浏览器的左上角：
-
-（2）如果用bottom描述，那么参考点就是浏览器首屏窗口尺寸（好好理解“首屏”二字），对应的页面的左下角：
-
-以盒子为参考点一个绝对定位的元素，如果父辈元素中也出现了已定位（无论是绝对定位、相对定位，还是固定定位）的元素，那么将以父辈这个元素，为参考点。
-如下：（子绝父相）
-
-以下几点需要注意。
-（1） 要听最近的已经定位的祖先元素的，不一定是父亲，可能是爷爷：
-12345&lt;div class=&quot;box1&quot;&gt;        相对定位	&lt;div class=&quot;box2&quot;&gt;    没有定位		&lt;p&gt;&lt;/p&gt;          
+（
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2141,7 +1931,7 @@ PS：负数表示相反的方向。
 
 
 
-   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v</div>
+   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v</div>
 
 -->
 
@@ -2241,13 +2031,6 @@ PS：负数表示相反的方向。
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 
