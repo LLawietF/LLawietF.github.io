@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="H5中常用的新语义标签 &amp;lt;nav&amp;gt; 表示导航  &amp;lt;header&amp;gt; 表示页眉  &amp;lt;footer&amp;gt; 表示页脚  &amp;lt;section&amp;gt; 表示区块  &amp;lt;article&amp;gt; 表示文章。如文章、评论、帖子、博客  &amp;lt;aside&amp;gt; 表示侧边栏 如文章的侧栏  &amp;lt;figure&amp;gt; 表示媒介内容分组。  &amp;lt;mark&amp;gt; 表示标记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5复习(一)">
+<meta property="og:url" content="https://llawietf.github.io/2019/01/04/第12篇博客/index.html">
+<meta property="og:site_name" content="LLawietF&#39;s Blog">
+<meta property="og:description" content="H5中常用的新语义标签 &amp;lt;nav&amp;gt; 表示导航  &amp;lt;header&amp;gt; 表示页眉  &amp;lt;footer&amp;gt; 表示页脚  &amp;lt;section&amp;gt; 表示区块  &amp;lt;article&amp;gt; 表示文章。如文章、评论、帖子、博客  &amp;lt;aside&amp;gt; 表示侧边栏 如文章的侧栏  &amp;lt;figure&amp;gt; 表示媒介内容分组。  &amp;lt;mark&amp;gt; 表示标记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.smyhvae.com/20180206_1845.gif">
+<meta property="og:image" content="http://img.smyhvae.com/20180206_1920.gif">
+<meta property="og:image" content="http://img.smyhvae.com/20180206_1945.png">
+<meta property="og:image" content="http://img.smyhvae.com/20180206_2025.png">
+<meta property="og:updated_time" content="2019-01-05T08:28:39.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5复习(一)">
+<meta name="twitter:description" content="H5中常用的新语义标签 &amp;lt;nav&amp;gt; 表示导航  &amp;lt;header&amp;gt; 表示页眉  &amp;lt;footer&amp;gt; 表示页脚  &amp;lt;section&amp;gt; 表示区块  &amp;lt;article&amp;gt; 表示文章。如文章、评论、帖子、博客  &amp;lt;aside&amp;gt; 表示侧边栏 如文章的侧栏  &amp;lt;figure&amp;gt; 表示媒介内容分组。  &amp;lt;mark&amp;gt; 表示标记">
+<meta name="twitter:image" content="http://img.smyhvae.com/20180206_1845.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://llawietf.github.io/2019/01/04/第12篇博客/">
+
+
+
+
+
+  <title>HTML5复习(一) | LLawietF's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LLawietF's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/01/04/第12篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML5复习(一)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T20:29:17+08:00">
+                2019-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="H5中常用的新语义标签"><a href="#H5中常用的新语义标签" class="headerlink" title="H5中常用的新语义标签"></a>H5中常用的新语义标签</h2><ul>
+<li><p><code>&lt;nav&gt;</code> 表示导航</p>
+</li>
+<li><p><code>&lt;header&gt;</code> 表示页眉</p>
+</li>
+<li><p><code>&lt;footer&gt;</code> 表示页脚</p>
+</li>
+<li><p><code>&lt;section&gt;</code> 表示区块</p>
+</li>
+<li><p><code>&lt;article&gt;</code> 表示文章。如文章、评论、帖子、博客</p>
+</li>
+<li><p><code>&lt;aside&gt;</code> 表示侧边栏 如文章的侧栏</p>
+</li>
+<li><p><code>&lt;figure&gt;</code> 表示媒介内容分组。</p>
+</li>
+<li><p><code>&lt;mark&gt;</code> 表示标记 (用得少)</p>
+</li>
+<li><p><code>&lt;progress&gt;</code> 表示进度 (用得少)</p>
+</li>
+<li><p><code>&lt;time&gt;</code> 表示日期</p>
+</li>
+</ul>
+<p>本质上新语义标签与<code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>没有区别，只是其具有表意性，使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别，可以理解成<code>&lt;div class=&quot;nav&quot;&gt;</code> 相当于<code>&lt;nav&gt;</code>。</p>
+<p>PS：单标签不用写关闭符号。</p>
+<h3 id="新语义标签的兼容性处理"><a href="#新语义标签的兼容性处理" class="headerlink" title="新语义标签的兼容性处理"></a>新语义标签的兼容性处理</h3><p>IE8 及以下版本的浏览器不支持 H5 和 CSS3。解决办法：引入<code>html5shiv.js</code>文件。</p>
+<p>引入时，需要做if判断，具体代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  条件注释 只有ie能够识别--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if lte ie 8]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上方代码是<strong>条件注释</strong>：虽然是注释，但是IE浏览器可以识别出来。解释一下：</p>
+<ul>
+<li><p>l：less 更小</p>
+</li>
+<li><p>t：than 比</p>
+</li>
+<li><p>e：equal等于</p>
+</li>
+<li><p>g：great 更大</p>
+</li>
+</ul>
+<p>PS:我们在测试 IE 浏览器的兼容的时候，可以使用软件 ietest，模拟IE6-IE11。</p>
+<p> 在不支持HTML5新标签的浏览器，会将这些新的标签解析成行内元素(inline)对待，所以我们只需要将其转换成块元素(block)即可使用。</p>
+<p> 但是在IE9版本以下，并不能正常解析这些新标签，但是可以识别通过document.createElement(‘tagName’)创建的自定义标签。于是我们的解决方案就是：将HTML5的新标签全部通过document.createElement(‘tagName’)来创建一遍，这样IE低版本也能正常解析HTML5新标签了。</p>
+<p> 当然，在实际开发中我们更多采用的办法是：检测IE浏览器的版本，来加载第三方的JS库来解决兼容问题（如上方代码所示）。</p>
+<h2 id="H5中的表单"><a href="#H5中的表单" class="headerlink" title="H5中的表单"></a>H5中的表单</h2><p>传统的Web表单已经越来越不能满足开发的需求，HTML5 在 Web 表单方向做了很大的改进，如拾色器、日期/时间组件等，使表单处理更加高效。</p>
+<h3 id="H5中新增的表单类型"><a href="#H5中新增的表单类型" class="headerlink" title="H5中新增的表单类型"></a>H5中新增的表单类型</h3><ul>
+<li><p><code>email</code> 只能输入email格式。自动带有验证功能。</p>
+</li>
+<li><p><code>tel</code> 手机号码。</p>
+</li>
+<li><p><code>url</code> 只能输入url格式。</p>
+</li>
+<li><p><code>number</code> 只能输入数字。</p>
+</li>
+<li><p><code>search</code> 搜索框</p>
+</li>
+<li><p><code>range</code> 滑动条</p>
+</li>
+<li><p><code>color</code> 拾色器</p>
+</li>
+<li><p><code>time</code>    时间</p>
+</li>
+<li><p><code>date</code> 日期。</p>
+</li>
+<li><p><code>--datetime</code> 时间日期</p>
+</li>
+<li><p><code>month</code> 月份</p>
+</li>
+<li><p><code>week</code> 星期</p>
+</li>
+</ul>
+<p>上面的部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。</p>
+<p>代码举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, user-scalable=no"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>表单类型<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        body &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#F7F7F7</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        form &#123;</span></span><br><span class="line"><span class="undefined">            max-width: 500px;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            margin: 32px auto 0;</span></span><br><span class="line"><span class="undefined">            font-size: 16px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        label &#123;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            margin: 10px 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        input &#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 25px;</span></span><br><span class="line"><span class="undefined">            margin-top: 2px;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>表单类型<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            email: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            color: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"color"</span> <span class="attr">name</span>=<span class="string">"color"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            url: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">name</span>=<span class="string">'url'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            number: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">step</span>=<span class="string">"3"</span> <span class="attr">name</span>=<span class="string">"number"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            range: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">"range"</span> <span class="attr">value</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            search: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">name</span>=<span class="string">"search"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            tel: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">name</span>=<span class="string">"tel"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            time: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">name</span>=<span class="string">"time"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            date: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"date"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            datetime: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"datetime"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            week: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"week"</span> <span class="attr">name</span>=<span class="string">"month"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            month: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"month"</span> <span class="attr">name</span>=<span class="string">"month"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            datetime-local: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"datetime-local"</span> <span class="attr">name</span>=<span class="string">"datetime-local"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>代码解释：</p>
+<p><code>&lt;fieldset&gt;</code> 标签将表单里的内容进行打包，代表一组；而<code>&lt;legend&gt;</code>标签的则是 fieldset 里的元素定义标题。</p>
+<h3 id="表单元素（标签）"><a href="#表单元素（标签）" class="headerlink" title="表单元素（标签）"></a>表单元素（标签）</h3><p>这里讲两个表单元素。</p>
+<p><strong>1、<code>&lt;datalist&gt;</code> 数据列表：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">list</span>=<span class="string">"myData"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"myData"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>本科<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>研究生<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>不明<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上方代码中，input里的list属性和 datalist 进行了绑定。</p>
+<p>效果：</p>
+<p><img src="http://img.smyhvae.com/20180206_1845.gif" alt=""></p>
+<p>上图可以看出，数据列表可以自动提示。</p>
+<p>2、<code>&lt;keygen&gt;</code>元素：</p>
+<p>keygen 元素的作用是提供一种验证用户的可靠方法。</p>
+<p>keygen 元素是密钥对生成器（key-pair generator）。当提交表单时，会生成两个键：一个公钥，一个私钥。</p>
+<p>私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。公钥可用于之后验证用户的客户端证书（client certificate）。</p>
+<p>3、<code>&lt;meter&gt;</code>元素：度量器</p>
+<ul>
+<li><p>low：低于该值后警告</p>
+</li>
+<li><p>high：高于该值后警告</p>
+</li>
+<li><p>value：当前值</p>
+</li>
+<li><p>max：最大值</p>
+</li>
+<li><p>min：最小值。</p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meter  value=<span class="string">"81"</span>    min=<span class="string">"0"</span> max=<span class="string">"100"</span>  low=<span class="string">"60"</span>  high=<span class="string">"80"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h3><ul>
+<li><p><code>placeholder</code> 占位符（提示文字）</p>
+</li>
+<li><p><code>autofocus</code> 自动获取焦点</p>
+</li>
+<li><p><code>multiple</code> 文件上传多选或多个邮箱地址</p>
+</li>
+<li><p><code>autocomplete</code> 自动完成（填充的）。on 开启（默认），off 取消。用于表单元素，也可用于表单自身(on/off)</p>
+</li>
+<li><p><code>form</code> 指定表单项属于哪个form，处理复杂表单时会需要</p>
+</li>
+<li><p><code>novalidate</code> 关闭默认的验证功能（只能加给form）</p>
+</li>
+<li><p><code>required</code> 表示必填项</p>
+</li>
+<li><p><code>pattern</code> 自定义正则，验证表单。例如</p>
+</li>
+</ul>
+<p>代码举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        form &#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 最大宽度*/</span></span></span><br><span class="line"><span class="undefined">            max-width: 640px;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 最小宽度*/</span></span></span><br><span class="line"><span class="undefined">            min-width: 320px;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">            font-family: "Microsoft Yahei";</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        input &#123;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">            margin: 10px 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>表单属性<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"例如：smyhvae"</span> <span class="attr">autofocus</span> <span class="attr">name</span>=<span class="string">"userName"</span> <span class="attr">autocomplete</span>=<span class="string">"on"</span> <span class="attr">required</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            电话：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">pattern</span>=<span class="string">"1\d&#123;10&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            multiple的表单: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">multiple</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 上传文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">multiple</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><ul>
+<li><p><code>oninput()</code>：用户输入内容时触发，可用于输入字数统计。</p>
+</li>
+<li><p><code>oninvalid()</code>：验证不通过时触发。比如，如果验证不通过时，想弹出一段提示文字，就可以用到它。</p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        form &#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 最大宽度*/</span></span></span><br><span class="line"><span class="undefined">            max-width: 400px;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 最小宽度*/</span></span></span><br><span class="line"><span class="undefined">            min-width: 200px;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">            font-family: "Microsoft Yahei";</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        input &#123;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 30px;</span></span><br><span class="line"><span class="undefined">            margin: 10px 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>表单事件<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            邮箱：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"txt1"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            输入的次数统计：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"txt2"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> txt1 = <span class="built_in">document</span>.getElementById(<span class="string">'txt1'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> txt2 = <span class="built_in">document</span>.getElementById(<span class="string">'txt2'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> num = <span class="number">0</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    txt1.oninput = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">//用户输入时触发</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        num++;  <span class="comment">//用户每输入一次，num自动加 1</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//将统计数显示在txt2中</span></span></span><br><span class="line"><span class="undefined">        txt2.value = num;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    txt1.oninvalid = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">//验证不通过时触发</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.setCustomValidity(<span class="string">'亲，请输入正确哦'</span>);  <span class="comment">//设置验证不通过时的提示文字</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="http://img.smyhvae.com/20180206_1920.gif" alt=""></p>
+<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><p>在HTML5之前，在网页上播放音频/视频的通用方法是利用Flash来播放。但是大多情况下，并非所有用户的浏览器都安装了Flash插件，由此使得音频、视频播放的处理变得非常复杂；并且移动设备的浏览器并不支持Flash插件。</p>
+<p>H5里面提供了视频和音频的标签。</p>
+<h3 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h3><p>HTML5通过<code>&lt;audio&gt;</code>标签来解决音频播放的问题。</p>
+<p>使用举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"music/yinyue.mp3"</span> <span class="attr">autoplay</span> <span class="attr">controls</span>&gt;</span> <span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们可以通过附加属性，来更友好地控制音频的播放，如：</p>
+<ul>
+<li><p><code>autoplay</code> 自动播放。写成<code>autoplay</code> 或者 <code>autoplay = &quot;&quot;</code>，都可以。</p>
+</li>
+<li><p><code>controls</code> 控制条。（建议把这个选项写上，不然都看不到控件在哪里）</p>
+</li>
+<li><p><code>loop</code> 循环播放。</p>
+</li>
+<li><p><code>preload</code> 预加载 同时设置 autoplay 时，此属性将失效。</p>
+</li>
+</ul>
+<p><strong>处理兼容性问题：</strong></p>
+<p>由于版权等原因，不同的浏览器可支持播放的格式是不一样的：</p>
+<p><img src="http://img.smyhvae.com/20180206_1945.png" alt=""></p>
+<p>为了做到多浏览器支持，可以采取以下兼容性写法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--推荐的兼容写法：--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span> <span class="attr">loop</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music/yinyue.mp3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music/yinyue.ogg"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music/yinyue.wav"</span>/&gt;</span></span><br><span class="line">    抱歉，你的浏览器暂不支持此音频格式</span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>代码解释：如果识别不出音频格式，就弹出那句“抱歉”。</p>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><p>HTML5通过<code>&lt;video&gt;</code>标签来解决视频播放的问题。</p>
+<p>使用举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"video/movie.mp4"</span> <span class="attr">controls</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们可以通过附加属性，来更友好地控制视频的播放，如：</p>
+<ul>
+<li><p><code>autoplay</code> 自动播放。写成<code>autoplay</code> 或者 <code>autoplay = &quot;&quot;</code>，都可以。</p>
+</li>
+<li><p><code>controls</code> 控制条。（建议把这个选项写上，不然都看不到控件在哪里）</p>
+</li>
+<li><p><code>loop</code> 循环播放。</p>
+</li>
+<li><p><code>preload</code> 预加载 同时设置 autoplay 时，此属性将失效。</p>
+</li>
+<li><p><code>width</code>：设置播放窗口宽度。</p>
+</li>
+<li><p><code>height</code>：设置播放窗口的高度。</p>
+</li>
+</ul>
+<p>由于版权等原因，不同的浏览器可支持播放的格式是不一样的：</p>
+<p><img src="http://img.smyhvae.com/20180206_2025.png" alt=""></p>
+<p>兼容性写法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&lt;video src="video/movie.mp4" controls  autoplay &gt;&lt;/video&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  行内块 display:inline-block --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span> <span class="attr">autoplay</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"video/movie.mp4"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"video/movie.ogg"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"video/movie.webm"</span>/&gt;</span></span><br><span class="line">    抱歉，不支持此视频</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="DOM-操作"><a href="#DOM-操作" class="headerlink" title="DOM 操作"></a>DOM 操作</h2><h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><ul>
+<li><p>document.querySelector(“selector”) 通过CSS选择器获取符合条件的第一个元素。</p>
+</li>
+<li><p>document.querySelectorAll(“selector”)  通过CSS选择器获取符合条件的所有元素，以类数组形式存在。</p>
+</li>
+</ul>
+<h3 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h3><ul>
+<li><p>Node.classList.add(“class”) 添加class</p>
+</li>
+<li><p>Node.classList.remove(“class”) 移除class</p>
+</li>
+<li><p>Node.classList.toggle(“class”) 切换class，有则移除，无则添加</p>
+</li>
+<li><p>Node.classList.contains(“class”) 检测是否存在class</p>
+</li>
+</ul>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><p>js 里可以通过 <code>box1.index=100;</code>  <code>box1.title</code> 来自定义属性和获取属性。</p>
+<p>H5可以直接在标签里添加自定义属性，<strong>但必须以 <code>data-</code> 开头</strong>。</p>
+<p>举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 给标签添加自定义属性 必须以data-开头 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">title</span>=<span class="string">"盒子"</span> <span class="attr">data-my-name</span>=<span class="string">"smyhvae"</span> <span class="attr">data-content</span>=<span class="string">"我是一个div"</span>&gt;</span>div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//自定义的属性 需要通过 dateset[]方式来获取</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.dataset[<span class="string">"content"</span>]);  <span class="comment">//打印结果：我是一个div</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(box.dataset[<span class="string">"myName"</span>]);    <span class="comment">//打印结果：smyhvae</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//设置自定义属性的值</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> num = <span class="number">100</span>;</span></span><br><span class="line"><span class="undefined">    num.index = 10;</span></span><br><span class="line"><span class="undefined">    box.index = 100;</span></span><br><span class="line"><span class="javascript">    box.dataset[<span class="string">"content"</span>] = <span class="string">"aaaa"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/04/第11篇博客/" rel="next" title="CSS样式书写顺序">
+                <i class="fa fa-chevron-left"></i> CSS样式书写顺序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LLawietF</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H5中常用的新语义标签"><span class="nav-number">1.</span> <span class="nav-text">H5中常用的新语义标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新语义标签的兼容性处理"><span class="nav-number">1.1.</span> <span class="nav-text">新语义标签的兼容性处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H5中的表单"><span class="nav-number">2.</span> <span class="nav-text">H5中的表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#H5中新增的表单类型"><span class="nav-number">2.1.</span> <span class="nav-text">H5中新增的表单类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单元素（标签）"><span class="nav-number">2.2.</span> <span class="nav-text">表单元素（标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单属性"><span class="nav-number">2.3.</span> <span class="nav-text">表单属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单事件"><span class="nav-number">2.4.</span> <span class="nav-text">表单事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体"><span class="nav-number">3.</span> <span class="nav-text">多媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#音频"><span class="nav-number">3.1.</span> <span class="nav-text">音频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频"><span class="nav-number">3.2.</span> <span class="nav-text">视频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-操作"><span class="nav-number">4.</span> <span class="nav-text">DOM 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取元素"><span class="nav-number">4.1.</span> <span class="nav-text">获取元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类名操作"><span class="nav-number">4.2.</span> <span class="nav-text">类名操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义属性"><span class="nav-number">4.3.</span> <span class="nav-text">自定义属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LLawietF</span>
+
+  
+</div>
+
+<!--
+   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+   <span class="post-meta-divider">|</span>
+
+
+
+   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
