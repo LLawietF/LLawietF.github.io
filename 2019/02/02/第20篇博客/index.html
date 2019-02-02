@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第六章类成员的类型   数据成员（保存数据） 函数成员 （执行代码）      字段 方法 运算符   常量 属性 索引    构造函数 事件    析构函数    成员修饰符的顺序[特性] [修饰符] 核心声明 静态字段静态字段被类的所有实例共享，所有实例都访问同一内存位置。 静态成员的生存期实例创建后才产生实例成员，实例销毁后实例成员不存在；类没有实例，也存在静态成员，并且可以访问。 静态函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#图解教程读书笔记(二)">
+<meta property="og:url" content="https://llawietf.github.io/2019/02/02/第20篇博客/index.html">
+<meta property="og:site_name" content="LLawietF&#39;s Blog">
+<meta property="og:description" content="第六章类成员的类型   数据成员（保存数据） 函数成员 （执行代码）      字段 方法 运算符   常量 属性 索引    构造函数 事件    析构函数    成员修饰符的顺序[特性] [修饰符] 核心声明 静态字段静态字段被类的所有实例共享，所有实例都访问同一内存位置。 静态成员的生存期实例创建后才产生实例成员，实例销毁后实例成员不存在；类没有实例，也存在静态成员，并且可以访问。 静态函数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-4c873bbbac47c156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-601978be695bdffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-d6ce0cade63eb244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-7d151fd08b37389a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-ddf00413691af209.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-02-02T06:40:28.727Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C#图解教程读书笔记(二)">
+<meta name="twitter:description" content="第六章类成员的类型   数据成员（保存数据） 函数成员 （执行代码）      字段 方法 运算符   常量 属性 索引    构造函数 事件    析构函数    成员修饰符的顺序[特性] [修饰符] 核心声明 静态字段静态字段被类的所有实例共享，所有实例都访问同一内存位置。 静态成员的生存期实例创建后才产生实例成员，实例销毁后实例成员不存在；类没有实例，也存在静态成员，并且可以访问。 静态函数">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14443526-4c873bbbac47c156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://llawietf.github.io/2019/02/02/第20篇博客/">
+
+
+
+
+
+  <title>C#图解教程读书笔记(二) | LLawietF's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LLawietF's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://llawietf.github.io/2019/02/02/第20篇博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LLawietF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LLawietF's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C#图解教程读书笔记(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-02T14:38:34+08:00">
+                2019-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><h3 id="类成员的类型"><a href="#类成员的类型" class="headerlink" title="类成员的类型"></a>类成员的类型</h3><table>
+<thead>
+<tr>
+<th>数据成员（保存数据）</th>
+<th>函数成员 （执行代码）</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字段</td>
+<td>方法</td>
+<td>运算符</td>
+</tr>
+<tr>
+<td>常量</td>
+<td>属性</td>
+<td>索引</td>
+</tr>
+<tr>
+<td></td>
+<td>构造函数</td>
+<td>事件</td>
+</tr>
+<tr>
+<td></td>
+<td>析构函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="成员修饰符的顺序"><a href="#成员修饰符的顺序" class="headerlink" title="成员修饰符的顺序"></a>成员修饰符的顺序</h3><p>[特性] [修饰符] 核心声明</p>
+<h3 id="静态字段"><a href="#静态字段" class="headerlink" title="静态字段"></a>静态字段</h3><p>静态字段被类的所有实例共享，所有实例都访问同一内存位置。</p>
+<h3 id="静态成员的生存期"><a href="#静态成员的生存期" class="headerlink" title="静态成员的生存期"></a>静态成员的生存期</h3><p>实例创建后才产生实例成员，实例销毁后实例成员不存在；<br>类没有实例，也存在静态成员，并且可以访问。</p>
+<h3 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h3><p>类没有实例，仍然可以调用静态方法。<br>静态函数成员不能访问实例成员，它们能访问其他静态成员。</p>
+<h3 id="可以声明为静态的类成员类型"><a href="#可以声明为静态的类成员类型" class="headerlink" title="可以声明为静态的类成员类型"></a>可以声明为静态的类成员类型</h3><table>
+<thead>
+<tr>
+<th>数据成员（保存数据）</th>
+<th>函数成员 （执行代码）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字段</td>
+<td>方法</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>属性</td>
+</tr>
+<tr>
+<td>常量</td>
+<td>构造函数</td>
+</tr>
+<tr>
+<td></td>
+<td>运算符</td>
+</tr>
+<tr>
+<td></td>
+<td>索引器</td>
+</tr>
+<tr>
+<td></td>
+<td>事件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="成员常量"><a href="#成员常量" class="headerlink" title="成员常量"></a>成员常量</h3><p>与本地常量类似，成员常量声明以后给它赋值。</p>
+<h3 id="常量与静态量"><a href="#常量与静态量" class="headerlink" title="常量与静态量"></a>常量与静态量</h3><p>常量字段表现得像静态字段，但是在内存中没有存储位置，不能将常量声明为static。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>它不为数据存储分配内存，它执行代码。</p>
+<h4 id="属性声明和访问器"><a href="#属性声明和访问器" class="headerlink" title="属性声明和访问器"></a>属性声明和访问器</h4><p>set访问器总是：</p>
+<ul>
+<li>拥有一个单独的、隐式的值参，名称为value，与属性的类型相同；</li>
+<li>拥有一个返回类型void</li>
+</ul>
+<p>get访问器总是：</p>
+<ul>
+<li>没有参数</li>
+<li>拥有一个与属性类型相同的返回类型</li>
+</ul>
+<h4 id="只读和只写属性"><a href="#只读和只写属性" class="headerlink" title="只读和只写属性"></a>只读和只写属性</h4><p>只有get访问器的属性称为只读属性，只有set访问器的属性称为只写属性。</p>
+<h4 id="默认构造函数"><a href="#默认构造函数" class="headerlink" title="默认构造函数"></a>默认构造函数</h4><p>如果在类的声明中没有显式地提供实例构造函数，那么编译器会提供一个隐式地默认构造函数，没有参数，方法体为空。</p>
+<h3 id="静态构造函数"><a href="#静态构造函数" class="headerlink" title="静态构造函数"></a>静态构造函数</h3><p>静态构造函数在以下方面和实例构造函数不同：</p>
+<ul>
+<li>静态构造函数声明static关键字</li>
+<li>类只能有一个静态构造函数，而且不能带参数</li>
+<li>静态构造函数不能有访问修饰符</li>
+</ul>
+<p>关于静态构造函数应该了解的其他重要内容：</p>
+<ul>
+<li>类既可以有静态构造函数也可以有实例构造函数</li>
+<li>静态构造函数不能访问所在类的实例成员，因此不能使用this访问器</li>
+<li>不能从程序中显式调用静态构造函数，系统会自动调用它们，在：<br>类的任何实例被创建之前；<br>类的任何静态成员被引用之前。</li>
+</ul>
+<h3 id="对象初始化语句"><a href="#对象初始化语句" class="headerlink" title="对象初始化语句"></a>对象初始化语句</h3><p>初始化发生在构造方法执行之后</p>
+<h3 id="readonly修饰符"><a href="#readonly修饰符" class="headerlink" title="readonly修饰符"></a>readonly修饰符</h3><p>const字段只能在字段的声明语句中初始化，readonly字段可以在字段声明语句，类似const；类的任何构造函数设置它的值。</p>
+<p>const字段的值在编译时决定，readonly字段的值在运行时决定</p>
+<p>const的行为总是静态的，readonly可以是实例字段，也可以是静态字段；它在内存中有存储位置。</p>
+<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p>它只能被用在下列类成员的代码块中：</p>
+<ul>
+<li>实例构造函数</li>
+<li>实例方法</li>
+<li>属性和索引器的实例访问器</li>
+</ul>
+<p>this用于下列目的：</p>
+<ul>
+<li>用于区分类的成员和本地变量或参数</li>
+<li>作为调用方法的实参</li>
+</ul>
+<h3 id="索引器"><a href="#索引器" class="headerlink" title="索引器"></a>索引器</h3><h4 id="索引器和属性"><a href="#索引器和属性" class="headerlink" title="索引器和属性"></a>索引器和属性</h4><p>和属性一样，索引器不用分配内存来存储。<br>索引器和属性都主要被用来访问其他数据成员，它们与这些成员关联，并为它们提供获取和设置访问。</p>
+<ul>
+<li>属性通常表示单独的数据成员</li>
+<li>索引器通常表示多个数据成员<br>索引器总是实例成员，不能声明为static。<br>和属性一样，不能显式调用get和set访问器。<br>只要索引器的参数列表不同，类就可以有任意多个索引器。</li>
+</ul>
+<h3 id="访问器的访问修饰符"><a href="#访问器的访问修饰符" class="headerlink" title="访问器的访问修饰符"></a>访问器的访问修饰符</h3><p>仅当成员（属性或索引器）既有get访问器也有set访问器时，其访问器才能有访问修饰符。<br>只能有一个访问器有访问修饰符。<br>访问器的访问修饰符必须比成员的访问级别有更严格的限制</p>
+<h3 id="分部类和分部类型"><a href="#分部类和分部类型" class="headerlink" title="分部类和分部类型"></a>分部类和分部类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">partial class MyPartialClass&#123;</span><br><span class="line">   成员1，</span><br><span class="line">  成员2，</span><br><span class="line"> ...</span><br><span class="line">&#125;</span><br><span class="line">partial class MyPartialClass&#123;</span><br><span class="line">成员3，</span><br><span class="line">成员4，</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="分部方法"><a href="#分部方法" class="headerlink" title="分部方法"></a>分部方法</h3><p><img src="https://upload-images.jianshu.io/upload_images/14443526-4c873bbbac47c156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p>所有类都派生自object类。</p>
+<h3 id="屏蔽基类的成员"><a href="#屏蔽基类的成员" class="headerlink" title="屏蔽基类的成员"></a>屏蔽基类的成员</h3><p>使用new关键字可以告诉编译器显式地屏蔽基类成员。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class MyClass1</span><br><span class="line">    &#123;</span><br><span class="line">        private string fieldName1 = &quot;field1&quot;;</span><br><span class="line">        public void GetName()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(fieldName1); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class MyClass2 : MyClass1</span><br><span class="line">    &#123;</span><br><span class="line">        private string fieldName2 = &quot;field2&quot;;</span><br><span class="line">        new public void GetName()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(fieldName2);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            MyClass2 mc = new MyClass2();</span><br><span class="line">            mc.GetName(); //field2</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="基类访问"><a href="#基类访问" class="headerlink" title="基类访问"></a>基类访问</h3><p>如果派生类必须完全访问被隐藏的基类成员，可以使用base.成员名称访问隐藏的继承成员。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14443526-601978be695bdffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="使用基类的引用"><a href="#使用基类的引用" class="headerlink" title="使用基类的引用"></a>使用基类的引用</h3><p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class MyBaseClass</span><br><span class="line">    &#123;</span><br><span class="line">        public void Print()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;This is the base class.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class MyDerivedClass : MyBaseClass</span><br><span class="line">    &#123;</span><br><span class="line">        new public void Print()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;This is the derived class.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            MyDerivedClass derived = new MyDerivedClass();</span><br><span class="line">            MyBaseClass mybc = (MyBaseClass)derived;</span><br><span class="line"></span><br><span class="line">            derived.Print(); //This is the derived class.</span><br><span class="line">            mybc.Print(); //This is the base class.</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/14443526-d6ce0cade63eb244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="虚方法和重写方法"><a href="#虚方法和重写方法" class="headerlink" title="虚方法和重写方法"></a>虚方法和重写方法</h4><p>可以使用基类引用调用派生类的方法，只需满足下面的条件。</p>
+<ul>
+<li><p>派生类的方法和基类的方法有相同的签名和返回类型</p>
+</li>
+<li><p>基类的方法用virtual修饰符</p>
+</li>
+<li><p>派生类的方法用override修饰符</p>
+</li>
+</ul>
+<p>当使用基类引用调用方法时，方法调用被传递到派生类执行。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class MyBaseClass</span><br><span class="line">    &#123;</span><br><span class="line">        public virtual void Print()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;This is the base class.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class MyDerivedClass : MyBaseClass</span><br><span class="line">    &#123;</span><br><span class="line">        public override void Print()</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;This is the derived class.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            MyDerivedClass derived = new MyDerivedClass();</span><br><span class="line">            MyBaseClass mybc = (MyBaseClass)derived;</span><br><span class="line"></span><br><span class="line">            derived.Print(); // This is the derived class.</span><br><span class="line">            mybc.Print(); // This is the derived class.</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/14443526-7d151fd08b37389a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其他关于virtual和override修饰符的重要信息如下：</p>
+<ul>
+<li><p>重写和被重写的方法必须有相同的可访问性。</p>
+</li>
+<li><p>不能重写静态方法和非虚方法</p>
+</li>
+<li><p>方法、属性、索引器、事件，都可以被声明为virtual 和 override</p>
+</li>
+</ul>
+<h3 id="构造函数的执行"><a href="#构造函数的执行" class="headerlink" title="构造函数的执行"></a>构造函数的执行</h3><p>对象构造的顺序</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14443526-ddf00413691af209.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="构造函数初始化语句"><a href="#构造函数初始化语句" class="headerlink" title="构造函数初始化语句"></a>构造函数初始化语句</h4><p>默认情况下，在构造对象时，将调用基类的无参构造函数。但构造函数可以重载，所以基类可能有一个以上的构造函数。如果希望派生类使用一个指定的基类构造函数而不是无参构造函数，必须在构造函数初始化语句中指定它。</p>
+<p>有两种形式的构造函数初始化语句。</p>
+<ul>
+<li>第一种形式使用base指明使用哪一个基类构造函数</li>
+<li>第二种形式使用this指明使用当前类的哪一个构造函数</li>
+</ul>
+<h4 id="类访问修饰符"><a href="#类访问修饰符" class="headerlink" title="类访问修饰符"></a>类访问修饰符</h4><p>类的访问性有两个级别：public 和 internal。</p>
+<p>标记为public的类可以被系统内任何程序集的代码访问。<br>标记为internal的类只能被它自己所在的程序集内的类看到。</p>
+<h3 id="程序集间的继承"><a href="#程序集间的继承" class="headerlink" title="程序集间的继承"></a>程序集间的继承</h3><p>要从不同的程序集中定义基类的派生类，必须具备以下条件：</p>
+<ul>
+<li><p>基类必须被声明为public，这样才能从它所在的程序集外部访问它</p>
+</li>
+<li><p>必须添加对包含该基类的程序集的引用</p>
+</li>
+</ul>
+<h3 id="成员访问修饰符"><a href="#成员访问修饰符" class="headerlink" title="成员访问修饰符"></a>成员访问修饰符</h3><p>private：只在类的内部可访问<br>internal：对该程序集内的所有类可访问<br>protected：对所有继承该类的类可访问<br>protected internal： 对所有继承该类或在该程序集中声明的类可访问<br>public： 对任何类可访问</p>
+<h3 id="抽象成员"><a href="#抽象成员" class="headerlink" title="抽象成员"></a>抽象成员</h3><p>抽象成员有以下特征：</p>
+<ul>
+<li><p>必须是一个函数成员</p>
+</li>
+<li><p>必须用abstract修饰符</p>
+</li>
+<li><p>不能有实现代码块</p>
+</li>
+</ul>
+<p>关于抽象成员的其他重要事项：</p>
+<ul>
+<li><p>尽管抽象成员必须在派生类中用相应的成员重写，但不能和virtual修饰符一起用</p>
+</li>
+<li><p>派生类中的抽象成员实现必须指定override修饰符</p>
+</li>
+</ul>
+<p>比较虚成员和抽象成员<br>| | 虚成员 |  抽象成员 |<br>| —— | —— |  —— |<br>| 关键字 | virtual | abstract |<br>| 实现体 | 有 | 无 |<br>| 在派生类中被重写 | 能 | 必须 |<br>| 成员的类型| 方法  | 方法 |<br>|  | 属性 | 属性 |<br>|  | 事件 | 事件 |<br>|  | 索引器 | 索引器 |</p>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>抽象类只能被用作其他类的基类</p>
+<p>不能创建抽象类的实例</p>
+<p>抽象类必须用abstract声明</p>
+<p>抽象类可以包含抽象成员和普通的非抽象成员</p>
+<p>抽象类可以自己派生自另一个抽象类</p>
+<p>数据成员（字段和常量）不可以被声明为abstract。</p>
+<h3 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h3><p>密封类只能被用作独立的类，不能被用作基类。</p>
+<p>密封类使用sealed修饰符</p>
+<h3 id="静态类"><a href="#静态类" class="headerlink" title="静态类"></a>静态类</h3><p>类的所有成员必须是静态的。<br>类可以有一个静态构造函数，但不能有实例构造函数，不能创建该类的实例。<br>静态类是隐式密封的，不能继承静态类。<br>可以使用类名和成员名，像访问其他静态成员那样访问它的成员。</p>
+<h3 id="扩展方法"><a href="#扩展方法" class="headerlink" title="扩展方法"></a>扩展方法</h3><p>扩展方法的要求如下：</p>
+<ul>
+<li>声明扩展方法的类必须声明为static</li>
+<li>扩展方法本身必须声明为static</li>
+<li>扩展方法必须以this关键字开头加上要扩展的类和实例参数</li>
+</ul>
+<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><p>结构和类的区别：</p>
+<ul>
+<li><p>类是引用类型而结构是值类型</p>
+</li>
+<li><p>结构是隐式密封的，不能被派生</p>
+</li>
+</ul>
+<p>举例： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">struct Point</span><br><span class="line">    &#123;</span><br><span class="line">        public int X;</span><br><span class="line">        public int Y;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Point first, second, third;</span><br><span class="line"></span><br><span class="line">            first.X = 10; first.Y = 10;</span><br><span class="line">            second.X = 20; second.Y = 20;</span><br><span class="line">            third.X = first.X + second.X;</span><br><span class="line">            third.Y = first.Y + second.Y;</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(third.X); //30</span><br><span class="line">            Console.WriteLine(third.Y); //30</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结构是值类型"><a href="#结构是值类型" class="headerlink" title="结构是值类型"></a>结构是值类型</h3><p>结构类型的变量不能为null<br>两个结构变量不能引用同一对象</p>
+<h3 id="对结构赋值"><a href="#对结构赋值" class="headerlink" title="对结构赋值"></a>对结构赋值</h3><p>把一个结构赋值给另一个结构，就将一个结构的值赋值给另一个结构。</p>
+<h3 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h3><p>结构可以有实例构造函数和静态构造函数，但不允许有析构函数。</p>
+<h4 id="实例构造函数"><a href="#实例构造函数" class="headerlink" title="实例构造函数"></a>实例构造函数</h4><p>语言隐式地为每个结构提供一个无参构造函数。这个构造函数把结构的每个成员设置为该类型的默认值。值成员设置成它们的默认值，引用成员设置为null。</p>
+<p>预定义的无参构造函数不能删除或重定义，但是可以创建另外的构造函数，只要它们有参数。类只在没有其他构造函数声明的情况下提供隐式的无参构造函数。</p>
+<p>调用一个构造函数，包括隐式的无参构造函数，要使用new运算符。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">struct Point</span><br><span class="line">    &#123;</span><br><span class="line">        public int X;</span><br><span class="line">        public int Y;</span><br><span class="line">        public Point(int a, int b)</span><br><span class="line">        &#123;</span><br><span class="line">            X = a;</span><br><span class="line">            Y = b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Point p1 = new Point(); //调用隐式构造函数</span><br><span class="line">            Point p2 = new Point(5, 10);</span><br><span class="line">            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, p1.X, p1.Y); //0,0</span><br><span class="line">            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, p2.X, p2.Y); //5,10</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>也可以不使用new运算符创建结构的实例。然而，如果这样做，有一些限制，如下：</p>
+<ul>
+<li><p>在显式设置数据成员之后，才能使用它们的值</p>
+</li>
+<li><p>在对所有数据成员赋值之后，才能调用任何函数成员</p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">struct Point</span><br><span class="line">    &#123;</span><br><span class="line">        public int X;</span><br><span class="line">        public int Y;</span><br><span class="line">        public Point(int a, int b)</span><br><span class="line">        &#123;</span><br><span class="line">            X = a;</span><br><span class="line">            Y = b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Point p1, p2;</span><br><span class="line">            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, p1.X, p1.Y); //编译错误</span><br><span class="line">            p2.X = 5; p2.Y = 10;</span><br><span class="line">            Console.WriteLine(&quot;&#123;0&#125;,&#123;1&#125;&quot;, p2.X, p2.Y);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="静态构造函数-1"><a href="#静态构造函数-1" class="headerlink" title="静态构造函数"></a>静态构造函数</h4><p>以下两种行为，任意一种发生之前，将会调用静态构造函数。</p>
+<ul>
+<li><p>调用显式声明的构造函数</p>
+</li>
+<li><p>引用结构的静态成员</p>
+</li>
+</ul>
+<h3 id="在结构中字段初始化语句是不允许的"><a href="#在结构中字段初始化语句是不允许的" class="headerlink" title="在结构中字段初始化语句是不允许的"></a>在结构中字段初始化语句是不允许的</h3><h3 id="结构是密封的"><a href="#结构是密封的" class="headerlink" title="结构是密封的"></a>结构是密封的</h3><p>结构总是隐式密封的，因此，不能从它们派生其他结构。</p>
+<p>由于结构不支持继承，个别类成员修饰符不能用：</p>
+<p>protected、internal、abstract、virtual</p>
+<p>两个可以用于结构成员并与继承相关的关键字是new和override修饰符，所有结构都派生自System.ValueType。</p>
+<h3 id="结构作为返回值和参数"><a href="#结构作为返回值和参数" class="headerlink" title="结构作为返回值和参数"></a>结构作为返回值和参数</h3><ul>
+<li>返回值 当结构作为返回值时，将创建它的副本并从函数成员返回。</li>
+<li>值参数  当结构被用作值参数时，将创建实参结构的副本</li>
+<li>ref和out参数 如果把一个结构用作ref和out参数，传入方法的是该结构的一个引用，这样就可以修改其数据成员。</li>
+</ul>
+<h2 id="第十一章"><a href="#第十一章" class="headerlink" title="第十一章"></a>第十一章</h2><p>与结构一样，枚举是值类型，枚举只有一种类型成员：命名的整数值常量。</p>
+<p>每个枚举类型都有一个底层整数类型，默认为int。</p>
+<ul>
+<li><p>每个枚举成员都被赋予一个底层类型的常量值。</p>
+</li>
+<li><p>默认情况下，编译器把第一个成员赋值为0，每一个后续成员赋的值比前一个成员多1.</p>
+</li>
+</ul>
+<p>关于枚举的补充：</p>
+<p>枚举只有单一的成员类型：声明的成员常量。</p>
+<ul>
+<li><p>不能对成员使用修饰符。它们都隐式地具有和枚举相同地可访问性。</p>
+</li>
+<li><p>由于成员是常量，没有该枚举类型变量时也可以访问。</p>
+</li>
+<li><p>比较不同枚举类型地成员会导致编译时错误</p>
+</li>
+</ul>
+<h2 id="第十三章"><a href="#第十三章" class="headerlink" title="第十三章"></a>第十三章</h2><h3 id="什么是委托"><a href="#什么是委托" class="headerlink" title="什么是委托"></a>什么是委托</h3><p>委托是一个持有一个或多个方法的对象</p>
+<p>委托保存的方法可以来自任何类或结构，只要它们在下面两点匹配：</p>
+<ul>
+<li><p>委托的返回类型</p>
+</li>
+<li><p>委托的签名（包括ref和out修饰符）</p>
+</li>
+</ul>
+<h3 id="声明委托类型"><a href="#声明委托类型" class="headerlink" title="声明委托类型"></a>声明委托类型</h3><p>delegate 返回类型 委托类型名(参数);</p>
+<h3 id="创建委托对象"><a href="#创建委托对象" class="headerlink" title="创建委托对象"></a>创建委托对象</h3><p>委托类型 变量名 = new 委托类型(方法名);<br>或<br>委托类型 变量名 = 方法名;</p>
+<h3 id="组合委托"><a href="#组合委托" class="headerlink" title="组合委托"></a>组合委托</h3><p>举例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyDel delA = myInstObj.MyM1;</span><br><span class="line">MyDel delB = SClass.OtherM2;</span><br><span class="line">MyDel delC = delA + delB;</span><br></pre></td></tr></table></figure>
+<h3 id="从委托添加方法"><a href="#从委托添加方法" class="headerlink" title="从委托添加方法"></a>从委托添加方法</h3><p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyDel delVar = inst.MyM1;</span><br><span class="line">delVar += SCl.m3;</span><br><span class="line">delVar += X.Act;</span><br></pre></td></tr></table></figure>
+<h3 id="从委托移除方法"><a href="#从委托移除方法" class="headerlink" title="从委托移除方法"></a>从委托移除方法</h3><p>-=</p>
+<h3 id="调用委托"><a href="#调用委托" class="headerlink" title="调用委托"></a>调用委托</h3><p>委托变量名(实参);</p>
+<h3 id="匿名方法"><a href="#匿名方法" class="headerlink" title="匿名方法"></a>匿名方法</h3><h4 id="匿名方法的语法"><a href="#匿名方法的语法" class="headerlink" title="匿名方法的语法"></a>匿名方法的语法</h4><p>delegate(参数列表) {语句块}</p>
+<p>匿名方法不会显式声明返回值，如果委托没有返回值，匿名方法没有，反之，匿名方法需要return一个返回值。</p>
+<p>匿名方法的参数列表必须在如下方面与委托匹配：</p>
+<ul>
+<li><p>参数数量</p>
+</li>
+<li><p>参数类型及位置</p>
+</li>
+<li><p>修饰符</p>
+</li>
+</ul>
+<p>我们可以通过使圆括号为空或省略圆括号来简化匿名方法的参数列表，但必须满足以下两个条件：</p>
+<ul>
+<li><p>委托的参数列表不包含任何out参数</p>
+</li>
+<li><p>匿名方法不使用任何参数</p>
+</li>
+</ul>
+<p>委托声明的参数列表如果包含params参数，那么匿名方法的参数列表将忽略params关键字。</p>
+<h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>Lambda表达式参数列表中的参数必须在参数数量、类型和位置上与委托相匹配。<br>表达式的参数列表中的参数不一定需要包含类型，除非委托有ref或out参数，此时必须注明类型。<br>如果只有一个参数，并且是隐式类型的，周围的圆括号可以省略，否则必须有括号。<br>如果没有参数，必须使用一组空的圆括号。</p>
+<h2 id="第十四章"><a href="#第十四章" class="headerlink" title="第十四章"></a>第十四章</h2><h3 id="声明事件"><a href="#声明事件" class="headerlink" title="声明事件"></a>声明事件</h3><p>事件声明在一个类中。<br>它需要委托类型的名称，任何附加到事件（如注册）的处理程序都必须与委托类型的签名和返回类型匹配。<br>它声明为public，这样其他类和结构可以在它上面注册事件处理程序。<br>不能使用对象创建表达式(new 表达式)来创建它的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public event EventHandler 事件名;</span><br></pre></td></tr></table></figure>
+<p>我们还可以使用static关键字让事件变成静态的。</p>
+<p>和方法、属性一样，事件是类或结构的成员。</p>
+<ul>
+<li><p>由于事件是成员：我们不能在一段可执行代码中声明事件；</p>
+</li>
+<li><p>它必须声明在类或结构中，和其他成员一样</p>
+</li>
+<li><p>事件成员被隐式自动初始化为null</p>
+</li>
+</ul>
+<h3 id="订阅事件"><a href="#订阅事件" class="headerlink" title="订阅事件"></a>订阅事件</h3><p>使用+=运算符来为事件增加事件处理程序。</p>
+<p>事件处理程序的规范可以是以下任意一种：</p>
+<ul>
+<li>实例方法的名称；</li>
+<li>静态方法的名称；</li>
+<li>匿名方法；</li>
+<li>Lambda表达式。</li>
+</ul>
+<h3 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h3><p>触发事件的语法和调用方法一样：</p>
+<ul>
+<li><p>使用事件名称，后面跟的参数列表包含在圆括号中</p>
+</li>
+<li><p>参数列表必须与事件的委托类型相匹配</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件名(参数列表)</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">delegate void Handler();</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 发布者</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    class Incrementer</span><br><span class="line">    &#123;</span><br><span class="line">        public event Handler CountedADozen;</span><br><span class="line">        public void DoCount()</span><br><span class="line">        &#123;</span><br><span class="line">            for (int i = 1; i &lt; 100; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                if (i % 12 == 0 &amp;&amp; CountedADozen != null)</span><br><span class="line">                &#123;</span><br><span class="line">                    CountedADozen();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 订阅者</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    class Dozens</span><br><span class="line">    &#123;</span><br><span class="line">        public int DozensCount &#123; get; private set; &#125;</span><br><span class="line">        public Dozens(Incrementer incrementer)</span><br><span class="line">        &#123;</span><br><span class="line">            DozensCount = 0;</span><br><span class="line">            incrementer.CountedADozen += IncrementDozensCount;</span><br><span class="line">        &#125;</span><br><span class="line">        void IncrementDozensCount()</span><br><span class="line">        &#123;</span><br><span class="line">            DozensCount++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Incrementer incrementer = new Incrementer();</span><br><span class="line">            Dozens dozensCounter = new Dozens(incrementer);</span><br><span class="line"></span><br><span class="line">            incrementer.DoCount();</span><br><span class="line">            Console.WriteLine(dozensCounter.DozensCount);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/26/第19篇博客/" rel="next" title="C#图解教程读书笔记（一）">
+                <i class="fa fa-chevron-left"></i> C#图解教程读书笔记（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LLawietF</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章"><span class="nav-number">1.</span> <span class="nav-text">第六章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类成员的类型"><span class="nav-number">1.1.</span> <span class="nav-text">类成员的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成员修饰符的顺序"><span class="nav-number">1.2.</span> <span class="nav-text">成员修饰符的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态字段"><span class="nav-number">1.3.</span> <span class="nav-text">静态字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员的生存期"><span class="nav-number">1.4.</span> <span class="nav-text">静态成员的生存期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态函数成员"><span class="nav-number">1.5.</span> <span class="nav-text">静态函数成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以声明为静态的类成员类型"><span class="nav-number">1.6.</span> <span class="nav-text">可以声明为静态的类成员类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成员常量"><span class="nav-number">1.7.</span> <span class="nav-text">成员常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量与静态量"><span class="nav-number">1.8.</span> <span class="nav-text">常量与静态量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">1.9.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性声明和访问器"><span class="nav-number">1.9.1.</span> <span class="nav-text">属性声明和访问器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#只读和只写属性"><span class="nav-number">1.9.2.</span> <span class="nav-text">只读和只写属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认构造函数"><span class="nav-number">1.9.3.</span> <span class="nav-text">默认构造函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态构造函数"><span class="nav-number">1.10.</span> <span class="nav-text">静态构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象初始化语句"><span class="nav-number">1.11.</span> <span class="nav-text">对象初始化语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#readonly修饰符"><span class="nav-number">1.12.</span> <span class="nav-text">readonly修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this关键字"><span class="nav-number">1.13.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引器"><span class="nav-number">1.14.</span> <span class="nav-text">索引器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引器和属性"><span class="nav-number">1.14.1.</span> <span class="nav-text">索引器和属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问器的访问修饰符"><span class="nav-number">1.15.</span> <span class="nav-text">访问器的访问修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分部类和分部类型"><span class="nav-number">1.16.</span> <span class="nav-text">分部类和分部类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分部方法"><span class="nav-number">1.17.</span> <span class="nav-text">分部方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七章"><span class="nav-number">2.</span> <span class="nav-text">第七章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽基类的成员"><span class="nav-number">2.1.</span> <span class="nav-text">屏蔽基类的成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基类访问"><span class="nav-number">2.2.</span> <span class="nav-text">基类访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用基类的引用"><span class="nav-number">2.3.</span> <span class="nav-text">使用基类的引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#虚方法和重写方法"><span class="nav-number">2.3.1.</span> <span class="nav-text">虚方法和重写方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数的执行"><span class="nav-number">2.4.</span> <span class="nav-text">构造函数的执行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数初始化语句"><span class="nav-number">2.4.1.</span> <span class="nav-text">构造函数初始化语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类访问修饰符"><span class="nav-number">2.4.2.</span> <span class="nav-text">类访问修饰符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序集间的继承"><span class="nav-number">2.5.</span> <span class="nav-text">程序集间的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成员访问修饰符"><span class="nav-number">2.6.</span> <span class="nav-text">成员访问修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象成员"><span class="nav-number">2.7.</span> <span class="nav-text">抽象成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类"><span class="nav-number">2.8.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密封类"><span class="nav-number">2.9.</span> <span class="nav-text">密封类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态类"><span class="nav-number">2.10.</span> <span class="nav-text">静态类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展方法"><span class="nav-number">2.11.</span> <span class="nav-text">扩展方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十章"><span class="nav-number">3.</span> <span class="nav-text">第十章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构是值类型"><span class="nav-number">3.1.</span> <span class="nav-text">结构是值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对结构赋值"><span class="nav-number">3.2.</span> <span class="nav-text">对结构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">3.3.</span> <span class="nav-text">构造函数和析构函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例构造函数"><span class="nav-number">3.3.1.</span> <span class="nav-text">实例构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态构造函数-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">静态构造函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在结构中字段初始化语句是不允许的"><span class="nav-number">3.4.</span> <span class="nav-text">在结构中字段初始化语句是不允许的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构是密封的"><span class="nav-number">3.5.</span> <span class="nav-text">结构是密封的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构作为返回值和参数"><span class="nav-number">3.6.</span> <span class="nav-text">结构作为返回值和参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章"><span class="nav-number">4.</span> <span class="nav-text">第十一章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十三章"><span class="nav-number">5.</span> <span class="nav-text">第十三章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是委托"><span class="nav-number">5.1.</span> <span class="nav-text">什么是委托</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明委托类型"><span class="nav-number">5.2.</span> <span class="nav-text">声明委托类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建委托对象"><span class="nav-number">5.3.</span> <span class="nav-text">创建委托对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合委托"><span class="nav-number">5.4.</span> <span class="nav-text">组合委托</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从委托添加方法"><span class="nav-number">5.5.</span> <span class="nav-text">从委托添加方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从委托移除方法"><span class="nav-number">5.6.</span> <span class="nav-text">从委托移除方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用委托"><span class="nav-number">5.7.</span> <span class="nav-text">调用委托</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名方法"><span class="nav-number">5.8.</span> <span class="nav-text">匿名方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名方法的语法"><span class="nav-number">5.8.1.</span> <span class="nav-text">匿名方法的语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">5.9.</span> <span class="nav-text">Lambda表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十四章"><span class="nav-number">6.</span> <span class="nav-text">第十四章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明事件"><span class="nav-number">6.1.</span> <span class="nav-text">声明事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#订阅事件"><span class="nav-number">6.2.</span> <span class="nav-text">订阅事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发事件"><span class="nav-number">6.3.</span> <span class="nav-text">触发事件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LLawietF</span>
+
+  
+</div>
+
+<!--
+   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+   <span class="post-meta-divider">|</span>
+
+
+
+   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
