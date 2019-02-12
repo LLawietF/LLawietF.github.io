@@ -79,14 +79,19 @@
 
 
 
+<meta name="description" content="第15章 接口声明接口接口声明不能包含以下成员：  数据成员 静态成员  接口声明只能包含如下类型的非静态成员函数的声明：  方法 属性 事件-索引器  这些函数成员的声明不能包含任何实现代码，接口名称必须以大写的I开始，接口声明还可以分隔成分部接口声明。接口声明可以有任何的访问修饰符public、private、internal、protected。接口成员是隐式public的，不允许有任何访问">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#图解教程读书笔记（三）">
 <meta property="og:url" content="https://llawietf.github.io/2019/02/02/第21篇博客/index.html">
 <meta property="og:site_name" content="LLawietF&#39;s Blog">
+<meta property="og:description" content="第15章 接口声明接口接口声明不能包含以下成员：  数据成员 静态成员  接口声明只能包含如下类型的非静态成员函数的声明：  方法 属性 事件-索引器  这些函数成员的声明不能包含任何实现代码，接口名称必须以大写的I开始，接口声明还可以分隔成分部接口声明。接口声明可以有任何的访问修饰符public、private、internal、protected。接口成员是隐式public的，不允许有任何访问">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-02T06:48:25.811Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14443526-41c79026206f07df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-02-12T09:13:03.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#图解教程读书笔记（三）">
+<meta name="twitter:description" content="第15章 接口声明接口接口声明不能包含以下成员：  数据成员 静态成员  接口声明只能包含如下类型的非静态成员函数的声明：  方法 属性 事件-索引器  这些函数成员的声明不能包含任何实现代码，接口名称必须以大写的I开始，接口声明还可以分隔成分部接口声明。接口声明可以有任何的访问修饰符public、private、internal、protected。接口成员是隐式public的，不允许有任何访问">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14443526-41c79026206f07df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -322,7 +327,74 @@
       
 
       
-        
+        <h2 id="第15章-接口"><a href="#第15章-接口" class="headerlink" title="第15章 接口"></a>第15章 接口</h2><h3 id="声明接口"><a href="#声明接口" class="headerlink" title="声明接口"></a>声明接口</h3><p>接口声明不能包含以下成员：</p>
+<ul>
+<li>数据成员</li>
+<li>静态成员</li>
+</ul>
+<p>接口声明只能包含如下类型的非静态成员函数的声明：</p>
+<ul>
+<li>方法</li>
+<li>属性</li>
+<li>事件<br>-索引器</li>
+</ul>
+<p>这些函数成员的声明不能包含任何实现代码，接口名称必须以大写的I开始，接口声明还可以分隔成分部接口声明。<br>接口声明可以有任何的访问修饰符public、private、internal、protected。<br>接口成员是隐式public的，不允许有任何访问修饰符。</p>
+<h3 id="实现具有重复成员的接口"><a href="#实现具有重复成员的接口" class="headerlink" title="实现具有重复成员的接口"></a>实现具有重复成员的接口</h3><p>如果一个类实现了多个接口，并且其中一些接口有相同签名和返回类型的成员，那么类可以实现单个成员来满足所有包含重复成员的接口。</p>
+<h3 id="派生成员作为实现"><a href="#派生成员作为实现" class="headerlink" title="派生成员作为实现"></a>派生成员作为实现</h3><p>实现接口的类可以从它的基类继承实现的代码。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">interface IIfc1 &#123;void PrintOut(string s);&#125;</span><br><span class="line"></span><br><span class="line">class MyBaseClass&#123;</span><br><span class="line">    public void PrintOut(string s)</span><br><span class="line">    &#123;</span><br><span class="line">          Console.WriteLine(&quot;Calling through: &#123;0&#125;&quot;, s);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Derived : MyBaseClass,IIfc1</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program&#123;</span><br><span class="line">    static void Main()&#123;</span><br><span class="line">        Derived d = new Derived();</span><br><span class="line">        d.PrintOut(&quot;object.&quot;);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="显式接口成员实现"><a href="#显式接口成员实现" class="headerlink" title="显式接口成员实现"></a>显式接口成员实现</h3><p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">interface IIfc1 &#123; void PrintOut(string s); &#125;</span><br><span class="line">    interface IIfc2 &#123; void PrintOut(string t); &#125;</span><br><span class="line"></span><br><span class="line">    class Derived : IIfc1, IIfc2</span><br><span class="line">    &#123;</span><br><span class="line">        void IIfc1.PrintOut(string s)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(s);</span><br><span class="line">        &#125;</span><br><span class="line">        void IIfc2.PrintOut(string s)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Derived dr = new Derived();</span><br><span class="line">            IIfc1 i1 = (IIfc1)dr;</span><br><span class="line">            IIfc2 i2 = (IIfc2)dr;</span><br><span class="line"></span><br><span class="line">            i1.PrintOut(&quot;接口1&quot;);</span><br><span class="line">            i2.PrintOut(&quot;接口2&quot;);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>访问显式接口成员实现</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">interface IIfc1 &#123; void PrintOut(string s); &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    class Derived : IIfc1</span><br><span class="line">    &#123;</span><br><span class="line">        void IIfc1.PrintOut(string s)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(s);</span><br><span class="line">        &#125;</span><br><span class="line">        public void Method1()</span><br><span class="line">        &#123;</span><br><span class="line">            this.PrintOut(&quot;接口1&quot;);  //编译错误</span><br><span class="line">            ((IIfc1)this).PrintOut(&quot;接口1&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Derived dr = new Derived();</span><br><span class="line">            IIfc1 i1 = (IIfc1)dr;</span><br><span class="line">           </span><br><span class="line"></span><br><span class="line">            i1.Method1();</span><br><span class="line">            </span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="接口可以继承多个接口"><a href="#接口可以继承多个接口" class="headerlink" title="接口可以继承多个接口"></a>接口可以继承多个接口</h3><h2 id="第16章-转换"><a href="#第16章-转换" class="headerlink" title="第16章 转换"></a>第16章 转换</h2><h3 id="隐式引用转换"><a href="#隐式引用转换" class="headerlink" title="隐式引用转换"></a>隐式引用转换</h3><p>所有引用类型可以被隐式转换为object类型。<br>任何类型可以隐式转换到它继承的接口。</p>
+<h3 id="is运算符"><a href="#is运算符" class="headerlink" title="is运算符"></a>is运算符</h3><p>is运算符只可以用于引用转换以及装箱、拆箱转换，不能用于用户自定义转换。</p>
+<h3 id="as运算符"><a href="#as运算符" class="headerlink" title="as运算符"></a>as运算符</h3><p>as运算符只能用于引用转换和装箱转换。</p>
+<h2 id="第17章-泛型"><a href="#第17章-泛型" class="headerlink" title="第17章 泛型"></a>第17章 泛型</h2><h3 id="C-中的泛型"><a href="#C-中的泛型" class="headerlink" title="C#中的泛型"></a>C#中的泛型</h3><p>泛型类型不是类型，而是类型的模板。</p>
+<p>C#提供了5种泛型：类、结构、接口、委托和方法。</p>
+<h3 id="类型参数的约束"><a href="#类型参数的约束" class="headerlink" title="类型参数的约束"></a>类型参数的约束</h3><h4 id="where子句"><a href="#where子句" class="headerlink" title="where子句"></a>where子句</h4><p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class MyClass &lt;T1,T2,T3&gt; where T2:Customer where T3:IComparable</span><br></pre></td></tr></table></figure>
+<p>有关where子句的要点如下：</p>
+<ul>
+<li><p>它们在类型参数列表的关闭尖括号之后列出。</p>
+</li>
+<li><p>它们不使用逗号或其他符号分隔。</p>
+</li>
+<li><p>它们可以以任何次序列出。</p>
+</li>
+<li><p>where是上下文关键字，所以可以在其他上下文中使用。</p>
+</li>
+</ul>
+<h4 id="约束类型和次序"><a href="#约束类型和次序" class="headerlink" title="约束类型和次序"></a>约束类型和次序</h4><p>共有5种类型的约束：类名、class、struct、接口名、new()。</p>
+<p>where子句中的约束必须有特定的顺序：</p>
+<ul>
+<li>最多只能有一个主约束，如果有则必须放在第一位。</li>
+<li>可以有任意多的接口名约束。</li>
+<li>如果存在构造函数约束，则必须放在最后。</li>
+</ul>
+<h3 id="扩展方法和泛型类"><a href="#扩展方法和泛型类" class="headerlink" title="扩展方法和泛型类"></a>扩展方法和泛型类</h3><p>泛型类的扩展方法：</p>
+<ul>
+<li>必须声明为static</li>
+<li>必须是静态类的成员</li>
+<li>第一个参数类型中必须有关键字this，后面扩展的是泛型类的名字。</li>
+</ul>
+<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><p>与其他泛型相似，实现不同类型参数的泛型接口是不同的接口。<br>我们可以在非泛型类型中实现泛型接口。</p>
+<p>泛型接口的实现必须唯一。实现泛型类型接口时，必须保证类型实参组合不会在类型中产生两个重复的接口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">interface IMyIfc&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    T ReturnIt(T inValue);</span><br><span class="line">&#125;</span><br><span class="line">class Simple&lt;S&gt; : IMyIfc&lt;int&gt;,IMyIfc&lt;S&gt;</span><br><span class="line">&#123;</span><br><span class="line">    public int ReturnIt(int inValue)</span><br><span class="line">   &#123;</span><br><span class="line">         return inValue;</span><br><span class="line">    &#125;</span><br><span class="line">public S ReturnIt(int inValue)</span><br><span class="line">   &#123;</span><br><span class="line">         return inValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于泛型接口，使用两个相同的接口会产生一个潜在的冲突，如果把int作为类型参数来替代第二个接口中的S，Simple会有两个相同类型的接口。<br>泛型接口的名字不会和非泛型冲突。</p>
+<h3 id="协变"><a href="#协变" class="headerlink" title="协变"></a>协变</h3><p>如果派生类只是用于输出值，那么这种结构化委托有效性之间的常数关系叫做协变。为了让编译器知道，必须使用out关键字标记委托声明中的类型参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delegate T Factory&lt;out T&gt;;</span><br></pre></td></tr></table></figure>
+<h3 id="逆变"><a href="#逆变" class="headerlink" title="逆变"></a>逆变</h3><p>在期望传入基类时允许传入派生对象的特性叫做逆变。可以在类型参数中显式使用关键字in来使用。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14443526-41c79026206f07df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="比较协变和逆变"></p>
+<h4 id="接口的协变和逆变"><a href="#接口的协变和逆变" class="headerlink" title="接口的协变和逆变"></a>接口的协变和逆变</h4><p>协变和逆变可以应用到委托上，相同的原则也可以应用到接口上，可以在声明接口时使用out和in关键字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;public string Name;&#125;</span><br><span class="line">class Dog : Animal&#123;&#125;&apos;</span><br><span class="line"></span><br><span class="line">interface IMyIfc&lt;out T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    T GetFirst();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SimpleReturn&lt;T&gt; : IMyIfc&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line">     public T[] items = new T[2];</span><br><span class="line">     public T GetFirst() &#123;return items[0];&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">     static void DoSomething(IMyIfc&lt;Animal&gt; returner)</span><br><span class="line">   &#123;</span><br><span class="line">        Console.WriteLine(returner.getFirst().Name);</span><br><span class="line">    &#125;</span><br><span class="line">    static void Main()</span><br><span class="line">   &#123;</span><br><span class="line">        SimpleReturn&lt;Dog&gt; dogReturner = new SimpleReturn&lt;Dog&gt;();</span><br><span class="line">        dogReturner.items[0] = new Dog() &#123; Name = &quot;Avonlea&quot;&#125;;</span><br><span class="line">        DoSomething(dogReturner); </span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="有关可变性的更多内容"><a href="#有关可变性的更多内容" class="headerlink" title="有关可变性的更多内容"></a>有关可变性的更多内容</h4><ul>
+<li>变化只适用于引用类型</li>
+<li>显式变化使用in和out关键字只适用于委托和接口</li>
+<li>不包括in和out关键字的委托和接口类型叫做不变。这些类型参数不能用于协变和逆变</li>
+</ul>
+
       
     </div>
     
@@ -410,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -426,7 +507,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -471,6 +552,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第15章-接口"><span class="nav-number">1.</span> <span class="nav-text">第15章 接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明接口"><span class="nav-number">1.1.</span> <span class="nav-text">声明接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现具有重复成员的接口"><span class="nav-number">1.2.</span> <span class="nav-text">实现具有重复成员的接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#派生成员作为实现"><span class="nav-number">1.3.</span> <span class="nav-text">派生成员作为实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显式接口成员实现"><span class="nav-number">1.4.</span> <span class="nav-text">显式接口成员实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口可以继承多个接口"><span class="nav-number">1.5.</span> <span class="nav-text">接口可以继承多个接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第16章-转换"><span class="nav-number">2.</span> <span class="nav-text">第16章 转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式引用转换"><span class="nav-number">2.1.</span> <span class="nav-text">隐式引用转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#is运算符"><span class="nav-number">2.2.</span> <span class="nav-text">is运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#as运算符"><span class="nav-number">2.3.</span> <span class="nav-text">as运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第17章-泛型"><span class="nav-number">3.</span> <span class="nav-text">第17章 泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-中的泛型"><span class="nav-number">3.1.</span> <span class="nav-text">C#中的泛型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型参数的约束"><span class="nav-number">3.2.</span> <span class="nav-text">类型参数的约束</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#where子句"><span class="nav-number">3.2.1.</span> <span class="nav-text">where子句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#约束类型和次序"><span class="nav-number">3.2.2.</span> <span class="nav-text">约束类型和次序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展方法和泛型类"><span class="nav-number">3.3.</span> <span class="nav-text">扩展方法和泛型类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型接口"><span class="nav-number">3.4.</span> <span class="nav-text">泛型接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协变"><span class="nav-number">3.5.</span> <span class="nav-text">协变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逆变"><span class="nav-number">3.6.</span> <span class="nav-text">逆变</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的协变和逆变"><span class="nav-number">3.6.1.</span> <span class="nav-text">接口的协变和逆变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有关可变性的更多内容"><span class="nav-number">3.6.2.</span> <span class="nav-text">有关可变性的更多内容</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
